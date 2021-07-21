@@ -1,6 +1,9 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SachController;
+use App\Http\Controllers\DanhmucController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +22,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::resource('/danhmucsach',DanhmucController::class);
+Route::resource('/sach',SachController::class);
+
 
 

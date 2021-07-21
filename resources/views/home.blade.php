@@ -1,26 +1,27 @@
 @extends('layouts.app')
 
-<!-- <head>
-    <link href="{{ asset('css/dasboard.css') }}" rel="stylesheet">
-</head> -->
 
 @section('content')
 
-    <!-- <div class="container">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+          <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
+             <!--    <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif -->
 
-    <body>
         <div class="container1">
+        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif 
             <div class="navigation">
                 <ul>
                     <li>
@@ -46,8 +47,8 @@
                             </span>
                         </a>
                             <ul class="category-show">
-                                <li><a href="#"><span class="title">Add category</span></a></li>
-                                <li><a href="#"><span class="title">Show category</span></a></li>
+                                <li><a href="{{route('danhmucsach.create')}}"><span class="title">Add category</span></a></li>
+                                <li><a href="{{route('danhmucsach.index')}}"><span class="title">Show category</span></a></li>
                             </ul>
                         
                     </li>
@@ -60,8 +61,8 @@
                             </span>
                         </a>
                         <ul class="book-show">
-                            <li><a href="#"><span class="title">Add Book</span></a></li>
-                            <li><a href="#"><span class="title">Show Book</span></a></li>
+                            <li><a href="{{route('sach.create')}}"><span class="title">Add Book</span></a></li>
+                            <li><a href="{{route('sach.index')}}"><span class="title">Show Book</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -112,6 +113,5 @@
         }
 
         </script>
-    </body>
     
 @endsection
