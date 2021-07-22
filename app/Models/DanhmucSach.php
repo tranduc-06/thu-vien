@@ -9,7 +9,7 @@ class DanhmucSach extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['Tendanhmuc'];
+    protected $fillable = ['tendanhmuc'];
     protected $primaryKey = 'id_Danhmuc';
-    protected $table = 'theloai';
+    protected $table = 'danhmuc';
 }

@@ -1,44 +1,42 @@
-@extends('layouts.app')
+@extends('home')
 
 <!-- <head>
     <link href="{{ asset('css/dasboard.css') }}" rel="stylesheet">
 </head> -->
 
-@section('content')
-
+@section('content1')
+<!-- 
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Thêm danh mục sách') }}</div>
+            <div class="card"> -->
+<div class="card-header">{{ __('Cập nhật danh mục sách') }}</div>
 
-                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
-                 <form>
-                 @csrf
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">IdDanhmuc</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="IdDanhmuc">
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Tên danh mục</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Tên danh mục">
-                    </div>
-                    <!-- <div class="form-check">
+
+
+    <form method="post" action="{{ route('danhmucsach.update',[$danhmucsach->id_Danhmuc])}}">
+        @method('PUT')
+        @csrf
+        <div class="form-group">
+            <label for="tendanhmuc">Tên danh mục</label>
+            <input type="text" class="form-control" value="{{$danhmucsach->tendanhmuc}}" name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
+        </div>
+        <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+    </form>
+</div>
+
 @endsection

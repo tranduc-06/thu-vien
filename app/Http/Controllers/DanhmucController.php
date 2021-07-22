@@ -37,7 +37,7 @@ class DanhmucController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'tendanhmuc' => 'required|unique:theloai|max:255',
+            'tendanhmuc' => 'required|unique:danhmuc|max:255',
         ],  
         [
             'tendanhmuc.required' => 'tên danh mục phải có',
@@ -46,7 +46,7 @@ class DanhmucController extends Controller
         $danhmucsach = new DanhmucSach();
         $danhmucsach -> tendanhmuc = $validated['tendanhmuc'];
         $danhmucsach ->save();
-        return redirect()->back();
+        return redirect()->back()->with('status','Thêm danh mục thành công');
 
     }
 
@@ -67,9 +67,11 @@ class DanhmucController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_Danhmuc)
     {
-        //
+        $danhmucsach = DanhmucSach::find($id_Danhmuc);
+        return view('admin.danhmucsach.edit') -> with(compact('danhmucsach'));
+
     }
 
     /**
@@ -79,9 +81,20 @@ class DanhmucController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_Danhmuc)
     {
-        //
+        $validated = $request->validate([
+            'tendanhmuc' => 'required|unique:danhmuc|max:255',
+        ],  
+        [
+            'tendanhmuc.required' => 'tên danh mục phải có',
+        ]);
+
+        $danhmucsach = DanhmucSach::find($id_Danhmuc);
+        $danhmucsach -> tendanhmuc = $validated['tendanhmuc'];
+        $danhmucsach ->save();
+        return redirect()->back()->with('status','Cập nhật danh mục thành công');
+
     }
 
     /**
@@ -90,8 +103,10 @@ class DanhmucController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_Danhmuc)
     {
-        //
+        
+        DanhmucSach::find($id_Danhmuc)->delete();
+        return redirect()->back()->with('status','Xóa danh mục thành công');
     }
 }

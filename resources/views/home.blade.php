@@ -1,27 +1,10 @@
 @extends('layouts.app')
 
-
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-             <!--    <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif -->
-
-        <div class="container1">
-        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif 
+    <div class="row">
+        <div class="sidebar col-md-3">
             <div class="navigation">
                 <ul>
                     <li>
@@ -46,11 +29,11 @@
                             <span class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i>
                             </span>
                         </a>
-                            <ul class="category-show">
-                                <li><a href="{{route('danhmucsach.create')}}"><span class="title">Add category</span></a></li>
-                                <li><a href="{{route('danhmucsach.index')}}"><span class="title">Show category</span></a></li>
-                            </ul>
-                        
+                        <ul class="category-show">
+                            <li><a href="{{route('danhmucsach.create')}}"><span class="title">Add category</span></a></li>
+                            <li><a href="{{route('danhmucsach.index')}}"><span class="title">Show category</span></a></li>
+                        </ul>
+
                     </li>
                     <li>
                         <a href="#" onclick="showbook()">
@@ -78,7 +61,7 @@
                             </span>
                             <span class="title">Member</span>
                         </a>
-                    </li> 
+                    </li>
                     <li>
                         <a href="#">
                             <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -90,28 +73,41 @@
             </div>
             <div class="toggle" onclick="toggleMenu()"><i class="fa fa-bars" aria-hidden="true"></i>
             </div>
+
+            <script type="text/javascript">
+                function toggleMenu() {
+                    let navigation = document.querySelector('.navigation');
+                    let toggle = document.querySelector('.toggle');
+                    navigation.classList.toggle('ative');
+                    toggle.classList.toggle('ative');
+                }
+
+                function showcategory() {
+                    let category = document.querySelector('.category-show');
+                    category.classList.toggle('show');
+
+                }
+
+                function showbook() {
+                    let book = document.querySelector('.book-show');
+                    book.classList.toggle('show');
+                }
+            </script>
         </div>
 
-        <script type="text/javascript">
-        function toggleMenu() {
-            let navigation = document.querySelector('.navigation');
-            let toggle = document.querySelector('.toggle');
-            navigation.classList.toggle('ative');
-            toggle.classList.toggle('ative');
-        }
 
-        function showcategory()
-        {
-            let category = document.querySelector('.category-show');
-            category.classList.toggle('show');
-        
-        }
-        function showbook()
-        {
-            let book = document.querySelector('.book-show');
-            book.classList.toggle('show');
-        }
+        <div class="content col-md-9">
+                <div class="card-body">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
 
-        </script>
-    
+                    @yield('content1')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

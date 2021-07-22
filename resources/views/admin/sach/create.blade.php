@@ -1,64 +1,77 @@
-@extends('layouts.app')
+@extends('home')
 
 <!-- <head>
     <link href="{{ asset('css/dasboard.css') }}" rel="stylesheet">
 </head> -->
 
-@section('content')
-
+@section('content1')
+<!-- 
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Thêm sách') }}</div>
+            <div class="card"> -->
+<div class="card-header">{{ __('Thêm danh mục sách') }}</div>
 
-                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
-                 <form>
-                 @csrf
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">IdSach</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="IdSach">
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Tên Sách</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tên Sách">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">idTacgia</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdTacgia">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Idtheloai</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdTheloai">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">IdNxb</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdNxb">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Namxuatban</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Namxuatban">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Tóm tắt</label>
-                        <textarea class="form-control" id="exampleInputPassword1" placeholder="Tomtat"> </textarea>
-                    </div>
-                    <!-- <div class="form-check">
+
+
+<form method="post" action="{{ route('danhmucsach.store')}}">
+
+    @csrf
+
+    <div class="form-group">
+        <label for="tendanhmuc">Tên sách</label>
+        <input type="text" class="form-control" value="{{ old('tensach')}}" name="tensach" id="tensach" placeholder="Tên sách">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Tên danh mục</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="tacgia">Tác giả</label>
+        <input type="text" class="form-control" value="{{ old('tacgia')}}" name="tacgia" id="tacgia" placeholder="Tên tác giả">
+    </div>
+    <div class="form-group">
+        <label for="tendanhmuc">Năm xuất bản</label>
+        <input type="text" class="form-control" value="{{ old('namxuatban')}}" name="namxuatban" id="namxuatban" placeholder="Năm xuất bản">
+    </div>
+    <div class="form-group">
+        <label for="tendanhmuc">Nhà xuất bản</label>
+        <input type="text" class="form-control" value="{{ old('nhaxuatban')}}" name="nhaxuatban" id="nhaxuatban" placeholder="Nhà xuất bản">
+    </div>
+    <div class="form-group">
+        <label for="tendanhmuc">Hình ảnh</label>
+        <input type="file" class="form-control-file" name="hinhanh">
+    </div>
+
+    <div>
+        <label for="tomtat">Tóm tắt</label>
+        <textarea class="form-control" name="tomtat"></textarea>
+    </div><br>
+    <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-            </div>
-            </div>
-        </div>
+    <div>
+    <button type="submit" class="btn btn-primary">Thêm</button>
     </div>
-    </div>
+</form>
+</div>
+
 @endsection
