@@ -1,66 +1,43 @@
-@extends('layouts.app')
+@extends('home')
 
 <!-- <head>
     <link href="{{ asset('css/dasboard.css') }}" rel="stylesheet">
 </head> -->
 
-@section('content')
+@section('content1')
 
-    <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Liệt kê sách') }}
+<div class="card-header">{{ __('Liệt kê sách') }}</div>
 
-                </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Tên sách</th>
+                <th scope="col">Tên tác giả</th>
+                <th scope="col"> Danh mục </th>
+                <th scope="col"> Nhà xuất bản </th>
+                <th scope="col"> Năm xuất bản</th>
+                <th scope="col"> Hình ảnh </th>
+                <th scope="col"> Quản lý </th>
 
-                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                 
-                    <form>
-                    @csrf
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">IdSach</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="IdSach">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Tên Sách</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tên Sách">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">idTacgia</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdTacgia">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Idtheloai</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdTheloai">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">IdNxb</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="IdNxb">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Namxuatban</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Namxuatban">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Tóm tắt</label>
-                            <textarea class="form-control" id="exampleInputPassword1" placeholder="Tomtat"></textarea>
-                        </div>
-                        <!-- <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div> -->
-                    
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($sach as $key => $danhmuc)
+            <tr>
+                <th scope="row">{{$key}}</th>
+                <td>{{$danhmuc->tendanhmuc}}</td>
+                <td>
+                    <span><a href="{{route('danhmucsach.edit',[$danhmuc->id_Danhmuc])}}" class="btn btn-primary btn-sm">edit</a></span>
+                    <form action="{{route('danhmucsach.destroy',[$danhmuc->id_Danhmuc])}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <span><button onclick="return confirm('Bạn có muốn xóa danh mục này không')" class="btn btn-danger btn-sm">delete</button></span>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+</div>
 @endsection
