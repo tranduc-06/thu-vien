@@ -43,7 +43,7 @@
     </div>
     <div class="form-group">
         <label for="tacgia">Tác giả</label>
-        <input type="text" class="form-control" value="{{ old('tacgia')}}" name="tentacgia" id="tentacgia" placeholder="Tên tác giả">
+        <input type="text" class="form-control" value="{{ old('tentacgia')}}" name="tentacgia" id="tentacgia" placeholder="Tên tác giả">
     </div>
     <div class="form-group">
         <label for="namxuatban">Năm xuất bản</label>
@@ -72,10 +72,12 @@
 </form>
 
 <script>
-    document.getElementById("tacgia").onblur = function() {
+    document.getElementById("tentacgia").onblur = function() {
         this.value = ChuanhoaTen(this.value);
     };
-
+    document.getElementById("nhaxuatban").onblur = function() {
+        this.value = ChuanhoaTen(this.value);
+    };
     function ChuanhoaTen(ten) {
         dname = ten;
         ss = dname.split(' ');

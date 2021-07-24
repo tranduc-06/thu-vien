@@ -12,4 +12,9 @@ class DanhmucSach extends Model
     protected $fillable = ['tendanhmuc'];
     protected $primaryKey = 'id_Danhmuc';
     protected $table = 'danhmuc';
+
+    public function sach()
+    {
+        return $this->hasMany('App\Models\Sach');
+    }
 }

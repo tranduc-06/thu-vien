@@ -22,12 +22,14 @@
                 <th scope="row">{{$key}}</th>
                 <td>{{$danhmuc->tendanhmuc}}</td>
                 <td>
+                <div style="display:flex;">
                     <span><a href="{{route('danhmucsach.edit',[$danhmuc->id_Danhmuc])}}" class="btn btn-primary btn-sm">edit</a></span>
                     <form action="{{route('danhmucsach.destroy',[$danhmuc->id_Danhmuc])}}" method="post">
                         @method('DELETE')
                         @csrf
-                        <span><button onclick="return confirm('Bạn có muốn xóa danh mục này không')" class="btn btn-danger btn-sm">delete</button></span>
+                        <span><button style="margin-left:5px;" onclick="return confirm('Bạn có muốn xóa danh mục này không')" class="btn btn-danger btn-sm">delete</button></span>
                     </form>
+                </div>
                 </td>
             </tr>
             @endforeach

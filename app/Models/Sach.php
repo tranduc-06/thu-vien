@@ -12,4 +12,9 @@ class Sach extends Model
     protected $fillable = ['tensach','tentacgia','id_Danhmuc','nhaxuatban','namxuatban','hinhanh','tomtat'];
     protected $primaryKey = 'id_Sach';
     protected $table = 'sach';
+    
+    public function danhmucsach()
+    {
+        return $this->belongsTo('App\Models\DanhmucSach', 'id_Danhmuc','id_Danhmuc');
+    }
 }
