@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SachController;
 use App\Http\Controllers\DanhmucController;
-
-/*
+use App\Http\Controllers\DashboardController;/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -25,6 +24,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('/danhmucsach',DanhmucController::class);
 Route::resource('/sach',SachController::class);
+Route::resource('/dashboard',DashboardController::class);
 
 
 

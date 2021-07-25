@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="sidebar col-md-3">
+     <div class="row">
+        <div class="sidebar">
             <div class="navigation">
                 <ul>
                     <li>
@@ -15,7 +15,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('dashboard.index')}}">
                             <span class="icon"><i class="fa fa-home" aria-hidden="true"></i>
                             </span>
                             <span class="title">Dashboard</span>
@@ -108,6 +108,6 @@
                 </div>
             </div>
         </div>
-    </div>
+ </div>
 </div>
 @endsection

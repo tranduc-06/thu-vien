@@ -572,7 +572,10 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  flex-direction: row;
+  height: 100%;
 }
+
 
 .no-gutters {
   margin-right: 0;

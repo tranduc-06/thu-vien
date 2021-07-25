@@ -22,10 +22,10 @@
 
         </tr>
     </thead>
-    <tbody>
+    <tbody class="tbody">
         @foreach($list_sach as $key => $sach)
         <tr>
-            <th scope="row">{{$key}}</th>
+            <td scope="row">{{$key}}</td>
             <td>{{$sach->tensach}}</td>
             <td>{{$sach->tentacgia}}</td>
             <td>{{$sach->danhmucsach->tendanhmuc}}</td>
