@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SachController;
 use App\Http\Controllers\DanhmucController;
-use App\Http\Controllers\DashboardController;/*
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserpageController;
+use App\Http\Controllers\MuonsachController;
+use App\Http\Controllers\ThanhvienController;
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -16,15 +20,23 @@ use App\Http\Controllers\DashboardController;/*
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.userpage');
 });
+
+
+
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('checklogin');
 Route::resource('/danhmucsach',DanhmucController::class);
 Route::resource('/sach',SachController::class);
 Route::resource('/dashboard',DashboardController::class);
+Route::resource('/userpage',UserpageController::class);
+Route::resource('/muonsach',MuonsachController::class);
+Route::resource('/muonsach',MuonsachController::class);
+Route::resource('/thanhvien',ThanhvienController::class);
+
 
 
 

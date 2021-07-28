@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="container">
-     <div class="row">
+<div class="container" style="margin-left:0;">
+    <div class="row" style="width:100vw;">
         <div class="sidebar">
             <div class="navigation">
                 <ul>
@@ -48,26 +48,39 @@
                             <li><a href="{{route('sach.index')}}"><span class="title">Show Book</span></a></li>
                         </ul>
                     </li>
+
                     <li>
-                        <a href="#">
+                        <a href="{{route('muonsach.index')}}">
+                            <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i>
+                            </span>
+                            <span class="title">Require</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('muonsach.index')}}">
                             <span class="icon"><i class="fa fa-reply-all" aria-hidden="true"></i>
                             </span>
                             <span class="title">Borrow</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('thanhvien.index')}}">
                             <span class="icon"><i class="fa fa-id-card" aria-hidden="true"></i>
                             </span>
                             <span class="title">Member</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <li style="display:flex;">
+                        <a href="#" style="width:60px;">
+                            <span class="icon"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>
                             </span>
-                            <span class="title">Sign out</span>
+                            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><span class="title">Sign out</span></a>
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -97,17 +110,17 @@
 
 
         <div class="content col-md-9">
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    @yield('content1')
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
+                @endif
+
+                @yield('content1')
             </div>
         </div>
- </div>
+    </div>
+</div>
 </div>
 @endsection

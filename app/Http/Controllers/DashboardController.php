@@ -4,17 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dashboard;
+use App\Models\DanhmucSach;
+use App\Models\Sach;
 
 class DashboardController extends Controller
 {
     /**
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        $total_books = Sach::all()-> count();
+        return view('admin.dashboard.index')->with(compact('total_books'));
     }
 
     /**
