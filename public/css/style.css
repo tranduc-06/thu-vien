@@ -7314,7 +7314,7 @@ th {
   width: 100%;
 }
 .underline {
-  background-image: url(images/underline.png);
+  background-image: url("{{asset('images/underline.png')}}");
   background-repeat: no-repeat;
   float: left;
   height: 1px;
@@ -7331,7 +7331,7 @@ th {
   background-position: right top;
 }
 .layout-v2 .underline {
-  background-image: url(images/green-underline.png);
+  background-image: url("{{asset('images/green-underline.png')}}");
 }
 .rating {
   display: block;
@@ -9406,7 +9406,6 @@ a:focus {
   position: relative;
 }
 .welcome-section .welcome-image {
-  background-image: url(images/welcome-img-home-v1.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9511,13 +9510,13 @@ a:focus {
   width: 175px;
 }
 .facts-counter ul li .fact-item .fact-icon {
+  background-image: url("images/facts-count-icons-v1.png");
   float: left;
   height: 67px;
   margin-right: 10px;
   width: 64px;
 }
 .facts-counter ul li .fact-item .fact-icon i {
-  background-image: url(images/facts-count-icons-v1.png);
   background-position: 300px 300px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -9549,7 +9548,7 @@ a:focus {
 }
 .category-filter {
   background-attachment: fixed;
-  background-image: url(images/project-filter-bg-home-v1.jpg);
+  background-image: url("{{ asset('images/project-filter-bg-home-v1.jpg')}}");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10749,7 +10748,7 @@ a:focus {
 }
 .latest-blog.banner {
   background-attachment: fixed;
-  background-image: url(images/latest-blog-bg-home-v1.jpg);
+  background-image: url("{{asset('images/latest-blog-bg-home-v1.jpg')}}");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10863,7 +10862,7 @@ a:focus {
   }
 }
 .latest-blog .tabs-container .tabs-menu ul li a i {
-  background-image: url(images/features-icons-home-v1.png);
+  background-image: url("{{asset('images/features-icons-home-v1.png')}}");
   background-position: 500px 500px;
   background-repeat: no-repeat;
   display: inline-block;
@@ -12873,7 +12872,7 @@ a:focus {
 12.3. Home-V3
 --------------------------------------------------------------*/
 .layout-v3 .underline {
-  background-image: url("images/underline-v3.png");
+  background-image: url("{{asset('images/underline-v3.png')}}");
 }
 .layout-v3 .features {
   padding: 0;
@@ -12906,7 +12905,7 @@ a:focus {
   border: none;
 }
 .layout-v3 .welcome-section .welcome-image {
-  background-image: url(images/welcome-img-home-v3.jpg);
+  background-image: url("{{asset('images/welcome-img-home-v3.jpg')}}");
 }
 .layout-v3 .welcome-section .btn {
   color: #fff;
@@ -12919,7 +12918,7 @@ a:focus {
   background-color: #288feb;
 }
 .layout-v3 .newsletter .underline {
-  background-image: url("images/underline-white.png");
+  background-image: url("{{asset('images/underline-white.png')}}");
 }
 .layout-v3 .newsletter .section-title,
 .layout-v3 .newsletter .lead {
@@ -13629,25 +13628,25 @@ a:focus {
   width: 100%;
 }
 .page-banner.about-banner {
-  background-image: url(images/page-banners/about-banner.jpg);
+  background-image: url("{{asset('images/page-banners/about-banner.jpg')}}");
 }
 .page-banner.blog-banner {
-  background-image: url(images/page-banners/blog-banner.jpg);
+  background-image: url("{{asset('images/page-banners/blog-banner.jpg')}}");
 }
 .page-banner.contact-banner {
-  background-image: url(images/page-banners/contact-banner.jpg);
+  background-image: url("{{asset('images/page-banners/contact-banner.jpg')}}");
 }
 .page-banner.portfolio-banner {
-  background-image: url(images/page-banners/portfolio-banner.jpg);
+  background-image: url("{{asset('images/page-banners/portfolio-banner.jpg')}}");
 }
 .page-banner.product-banner {
-  background-image: url(images/page-banners/product-banner.jpg);
+  background-image: url("{{asset('images/page-banners/product-banner.jpg')}}");
 }
 .page-banner.services-banner {
-  background-image: url(images/page-banners/services-banner.jpg);
+  background-image: url("{{asset('images/page-banners/services-banner.jpg')}}" );
 }
 .page-banner.signin-banner {
-  background-image: url(images/page-banners/signin-banner.jpg);
+  background-image: url("{{asset('images/page-banners/signin-banner.jpg')}}");
 }
 .page-banner .banner-header {
   display: block;
@@ -15843,7 +15842,7 @@ a:focus {
   }
 }
 .who-we-are .company-info .company-image {
-  background-image: url("images/who-we-are-image.jpg");
+  background-image: url("{{asset('images/who-we-are-image.jpg')}}");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16607,7 +16606,7 @@ a:focus {
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.07);
 }
 .book-list-icon {
-  background-image: url("images/book-list-icons.png");
+  background-image: url("{{asset('images/book-list-icons.png')}}");
   background-repeat: no-repeat;
   height: 55px;
   left: -10px;
@@ -16662,7 +16661,7 @@ a:focus {
 }
 .staff-picks {
   background-attachment: fixed;
-  background-image: url("images/staff-picks-bg.jpg");
+  background-image: url("{{asset('images/staff-picks-bg.jpg')}}");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18430,7 +18429,7 @@ a:focus {
   left: 0;
   height: 1px;
   width: 72px;
-  background: url('images/underline.png') center center no-repeat;
+  background: url("{{asset('images/underline.png')}}") center center no-repeat;
 }
 .sidebar .widget-sub-title {
   border-bottom: 1px solid #f4f4f4;
@@ -18938,7 +18937,7 @@ a:focus {
 }
 #home-v1-header-carousel .carousel-control {
   background-color: transparent;
-  background-image: url(images/header-slider/home-v1/slider-controls.png);
+  background-image: url("{{asset('images/header-slider/home-v1/slider-controls.png')}}");
   background-repeat: no-repeat;
   bottom: auto;
   height: 58px;

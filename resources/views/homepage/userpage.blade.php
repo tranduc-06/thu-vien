@@ -19,7 +19,12 @@
     <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
     <!-- Mobile Menu -->
@@ -28,6 +33,8 @@
 
     <!-- Stylesheet -->
     <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css" />
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +83,7 @@
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
-                                            <div class="header-cart dropdown">
+                                            <!-- <div class="header-cart dropdown">
                                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                                     <i class="fa fa-shopping-cart"></i>
                                                     <small>0</small>
@@ -126,7 +133,7 @@
                                                         <a href="checkout.html" class="btn btn-primary">Checkout</a>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -134,12 +141,8 @@
                             <div class="navbar-collapse hidden-sm hidden-xs">
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown active">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="index-2.html">Home</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="index-2.html">Home V1</a></li>
-                                            <li><a href="home-v2.html">Home V2</a></li>
-                                            <li><a href="home-v3.html">Home V3</a></li>
-                                        </ul>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Home</a>
+                                       
                                     </li>
                                     <li class="dropdown">
                                         <a data-toggle="dropdown" class="dropdown-toggle disabled" href="books-media-list-view.html">Books &amp; Media</a>
@@ -158,7 +161,7 @@
                                             <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown">
+                                    <!-- <li class="dropdown">
                                         <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Pages</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="cart.html">Cart</a></li>
@@ -166,12 +169,12 @@
                                             <li><a href="signin.html">Signin/Register</a></li>
                                             <li><a href="404.html">404/Error</a></li>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Blog</a>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Thông tin cá nhân</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="blog.html">Blog Grid View</a></li>
-                                            <li><a href="blog-detail.html">Blog Detail</a></li>
+                                            <li><a href="blog.html">Thẻ thành viên</a></li>
+                                            <li><a href="blog-detail.html">Thông tin mượn</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="services.html">Services</a></li>
@@ -213,7 +216,7 @@
                                         <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">Pages</a>
                                     <ul>
                                         <li><a href="cart.html">Cart</a></li>
@@ -221,12 +224,12 @@
                                         <li><a href="signin.html">Signin/Register</a></li>
                                         <li><a href="404.html">404/Error</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <a href="blog.html">Blog</a>
+                                    <a href="blog.html">Thông tin cá nhân</a>
                                     <ul>
-                                        <li><a href="blog.html">Blog Grid View</a></li>
-                                        <li><a href="blog-detail.html">Blog Detail</a></li>
+                                        <li><a href="#">Thẻ thành viên</a></li>
+                                        <li><a href="#">Thông tin mượn</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="services.html">Services</a></li>
@@ -241,10 +244,10 @@
     <!-- End: Header Section -->
 
     <!-- Start: Slider Section -->
-    <div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel">
+    <!-- <div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel"> -->
 
-        <!-- Carousel slides -->
-        <div class="carousel-inner">
+    <!-- Carousel slides -->
+    <!-- <div class="carousel-inner">
             <div class="item active">
                 <figure>
                     <img alt="Home Slide" src="{{asset('images/header-slider/home-v1/header-slide.jpg')}}" />
@@ -293,15 +296,143 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+    <!-- Controls -->
+    <!-- <a class="left carousel-control" href="#home-v1-header-carousel" data-slide="prev"></a>
+        <a class="right carousel-control" href="#home-v1-header-carousel" data-slide="next"></a>
+    </div> -->
+<!-- 
+<div id="home-v1-header-carousel" class="carousel slide" data-ride="carousel">
+       
+        <div class="carousel-inner">
+            <div class="item active">
+                <figure>
+                    <img src="{{asset('images/header-slider/home-v1/header-slide.jpg')}}" alt="Los Angeles">
+                </figure>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h3>Online Learning Anytime, Anywhere!</h3>
+                        <h2>Discover Your Roots</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                        <div class="slide-buttons hidden-sm hidden-xs">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <a href="#" class="btn btn-default">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <figure>
+                    <img src="{{asset('images/header-slider/home-v1/header-slide.jpg')}}" alt="Los Angeles">
+                </figure>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h3>Online Learning Anytime, Anywhere!</h3>
+                        <h2>Discover Your Roots</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                        <div class="slide-buttons hidden-sm hidden-xs">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <a href="#" class="btn btn-default">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <figure>
+                    <img src="{{asset('images/header-slider/home-v1/header-slide.jpg')}}" alt="Los Angeles">
+                </figure>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h3>Online Learning Anytime, Anywhere!</h3>
+                        <h2>Discover Your Roots</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                        <div class="slide-buttons hidden-sm hidden-xs">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <a href="#" class="btn btn-default">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#home-v1-header-carousel" data-slide="prev"></a>
-        <a class="right carousel-control" href="#home-v1-header-carousel" data-slide="next"></a>
+      
+        <a class="left carousel-control" href="#home-v1-header-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#home-v1-header-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+</div> -->
+
+<div data-ride="carousel" class="carousel slide" id="home-v1-header-carousel">
+            
+            <!-- Carousel slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <figure>
+                        <img alt="Home Slide" src="images/header-slider/home-v1/header-slide.jpg" />
+                    </figure>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3>Online Learning Anytime, Anywhere!</h3>
+                            <h2>Discover Your Roots</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                            <div class="slide-buttons hidden-sm hidden-xs">    
+                                <a href="#" class="btn btn-primary">Read More</a>
+                                <a href="#" class="btn btn-default">Purchase</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <figure>
+                        <img alt="Home Slide" src="images/header-slider/home-v1/header-slide.jpg" />
+                    </figure>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3>Online Learning Anytime, Anywhere!</h3>
+                            <h2>Discover Your Roots</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                            <div class="slide-buttons hidden-sm hidden-xs">    
+                                <a href="#" class="btn btn-primary">Read More</a>
+                                <a href="#" class="btn btn-default">Purchase</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <figure>
+                        <img alt="Home Slide" src="images/header-slider/home-v1/header-slide.jpg" />
+                    </figure>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h3>Online Learning Anytime, Anywhere!</h3>
+                            <h2>Discover Your Roots</h2>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humor, or randomized words.</p>
+                            <div class="slide-buttons hidden-sm hidden-xs">    
+                                <a href="#" class="btn btn-primary">Read More</a>
+                                <a href="#" class="btn btn-default">Purchase</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controls -->
+            <a class="left carousel-control" href="#home-v1-header-carousel" data-slide="prev"></a>
+            <a class="right carousel-control" href="#home-v1-header-carousel" data-slide="next"></a>
+        </div>
     <!-- End: Slider Section -->
 
     <!-- Start: Search Section -->
+
+
     <section class="search-filters">
         <div class="container">
             <div class="filter-box">
@@ -403,23 +534,23 @@
                 </div>
             </div>
         </div>
-        <div class="welcome-image"></div>
+        <div class="welcome-image" style="background-image: url(" {{asset('images/welcome-img-home-v1.jpg')}}")"></div>
     </section>
     <!-- End: Welcome Section -->
 
 
     <!-- Start: Our Community Section -->
     <section class="community-testimonial">
-        <!-- <div class="container">
+        <div class="container">
             <div class="text-center">
-                <h2 class="section-title">Words From our Community</h2>
+                <h2 class="section-title">Sách mượn nhiều</h2>
                 <span class="underline center"></span>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="owl-carousel">
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -447,7 +578,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -475,7 +606,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -503,7 +634,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -531,7 +662,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -559,7 +690,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -587,7 +718,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-01.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -615,7 +746,7 @@
                 </div>
                 <div class="single-testimonial-box">
                     <div class="top-portion">
-                        <img src="{{ asset('images/testimonial-image-02.jpg')}}" alt="Testimonial Image" />
+                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
                         <div class="user-comment">
                             <div class="arrow-left"></div>
                             <blockquote cite="#">
@@ -642,33 +773,18 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-        </div> -->
-        <div class="container">
-        </div class="text-center">
-        <div class="owl-carousel owl-theme">
-            <div class="item"><img src="{{asset('uploads/sach/web34.jpg')}}" alt="">
-                <h4>Phát triển ứng dụng web</h4>
-            </div>
-            <div class="item"><img src="{{asset('uploads/sach/web34.jpg')}}" alt="">
-                <h4>Phát triển ứng dụng web</h4>
-            </div>
-            <div class="item"><img src="{{asset('uploads/sach/web34.jpg')}}" alt="">
-                <h4>Phát triển ứng dụng web</h4>
-            </div>
-            <div class="item"><img src="{{asset('uploads/sach/web34.jpg')}}" alt="">
-                <h4>Phát triển ứng dụng web</h4>
-            </div>
-            <div class="item"><img src="{{asset('uploads/sach/web34.jpg')}}" alt="">
-                <h4>Phát triển ứng dụng web</h4>
-            </div>
-        </div>
-        </div>
         </div>
     </section>
-    <section>
+<section>
+    <div class="text-center">
+
         <div class="album py-5 bg-light">
             <div class="container">
-
+                <div class="text-center">
+                    <h2 class="section-title">Sách mới cập nhật</h2>
+                    <span class="underline center"></span>
+                    <p class="lead">Những cuốn sách được mượn nhiều nhất trong tuần qua.</p>
+                </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card mb-4 box-shadow">
@@ -678,7 +794,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -692,8 +808,8 @@
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -707,8 +823,8 @@
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -722,8 +838,8 @@
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
                                     </div>
                                     <small class="text-muted">9 mins</small>
                                 </div>
@@ -733,8 +849,11 @@
                 </div>
             </div>
         </div>
+    </div>
     </section>
     <!-- Start: Footer -->
+
+
     <footer class="site-footer">
         <div class="container">
             <div id="footer-widgets">
@@ -844,7 +963,6 @@
     <!-- jQuery Latest Version 1.x -->
     <script type="text/javascript" src="{{ asset('js/jquery-1.12.4.min.js')}}"></script>
 
-
     <!-- jQuery UI -->
     <script type="text/javascript" src="{{ asset('js/jquery-ui.min.js')}}"></script>
 
@@ -853,12 +971,15 @@
 
     <!-- Bootstrap -->
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
 
     <!-- Mobile Menu -->
+
     <script type="text/javascript" src="{{ asset('js/mmenu.min.js')}}"></script>
 
     <!-- Harvey - State manager for media queries -->
-    <script type="text/javascript" src="{{ asset('s/harvey.min.js')}}j"></script>
+    <script type="text/javascript" src="{{ asset('js/harvey.min.js')}}"></script>
 
     <!-- Waypoints - Load Elements on View -->
     <script type="text/javascript" src="{{ asset('js/waypoints.min.js')}}"></script>
@@ -892,26 +1013,6 @@
 
     <!-- Custom Scripts -->
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-
-    <script type="text/javascript">
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            // nav:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        })
-    </script>
-
 
 
 </body>
