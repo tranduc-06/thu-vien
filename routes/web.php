@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserpageController;
 use App\Http\Controllers\MuonsachController;
 use App\Http\Controllers\ThanhvienController;
+use App\Models\DanhmucSach;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,12 @@ use App\Http\Controllers\ThanhvienController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.userpage');
-});
+// Route::get('/', function () {
+//     $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+//     return view('homepage.userpage')->with(compact('danhmuc'));
+// });
+
+Route::resource('/',UserpageController::class);
 
 
 

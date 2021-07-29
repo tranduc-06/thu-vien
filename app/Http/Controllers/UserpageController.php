@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\DanhmucSach;
+use App\Models\Sach;
+
 class UserpageController extends Controller
 {
     /**
@@ -13,8 +16,11 @@ class UserpageController extends Controller
      */
     public function index()
     {
-        return view('homepage.userpage.index');
+        $tacgia = Sach::orderBy('id_Sach','DESC')->get();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        return view('homepage.userpage')->with(compact('danhmuc','tacgia'));
     }
+
 
     /**
      * Show the form for creating a new resource.

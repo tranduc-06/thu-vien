@@ -6,9 +6,14 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tên độc giả</th>
+      <th scope="col">id_Thẻ</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ngày mượn</th>
+      <th scope="col">Ngày hẹn trả</th>
+      <th scope="col">Ngày trả</th>
+      <th scope="col">Tình trạng</th>
     </tr>
   </thead>
   <tbody>

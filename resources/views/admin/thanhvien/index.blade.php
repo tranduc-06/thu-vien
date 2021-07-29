@@ -5,15 +5,14 @@
     <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">id_Thẻ</th>
             <th scope="col">Tên độc giả</th>
             <th scope="col">Điện thoại</th>
             <th scope="col">Email</th>
             <th scope="col">Ngày bắt đầu</th>
             <th scope="col">Ngày kết thúc</th>
             <th scope="col">Địa chỉ</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
+           
         </tr>
     </thead>
     <tbody>
