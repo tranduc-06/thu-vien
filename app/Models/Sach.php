@@ -9,12 +9,17 @@ class Sach extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['tensach','tentacgia','id_Danhmuc','nhaxuatban','namxuatban','hinhanh','tomtat'];
+    protected $fillable = ['tensach','slugsach','tentacgia','id_Danhmuc','nhaxuatban','namxuatban','hinhanh','tomtat'];
     protected $primaryKey = 'id_Sach';
     protected $table = 'sach';
     
     public function danhmucsach()
     {
         return $this->belongsTo('App\Models\DanhmucSach', 'id_Danhmuc','id_Danhmuc');
+    }
+
+    public function muontra()
+    {
+        return $this->hasMany('App\Models\Muontra');
     }
 }

@@ -6,8 +6,9 @@ use App\Http\Controllers\SachController;
 use App\Http\Controllers\DanhmucController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserpageController;
-use App\Http\Controllers\MuonsachController;
+use App\Http\Controllers\QuanlyMuonsachController;
 use App\Http\Controllers\ThanhvienController;
+use App\Http\Controllers\MuonsachController;
 use App\Models\DanhmucSach;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,14 @@ use App\Models\DanhmucSach;
 //     return view('homepage.userpage')->with(compact('danhmuc'));
 // });
 
-Route::resource('/',UserpageController::class);
+Route::get('/',[UserpageController::class, 'index']);
+Route::get('/danh-muc/{slugdanhmuc}',[UserpageController::class, 'danhmuc']);
+Route::get('/chi-tiet/{slugsach}',[UserpageController::class, 'chitiet']);
+Route::get('/tim-kiem',[UserpageController::class, 'timkiem']);
+Route::post('/muon-sach',[MuonsachController::class, 'store'])->middleware('auth');
+Route::get('/muon-sach',[MuonsachController::class, 'index'])->middleware('auth');
+
+
 
 
 
@@ -36,9 +44,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 Route::resource('/danhmucsach',DanhmucController::class);
 Route::resource('/sach',SachController::class);
 Route::resource('/dashboard',DashboardController::class);
-Route::resource('/userpage',UserpageController::class);
-Route::resource('/muonsach',MuonsachController::class);
-Route::resource('/muonsach',MuonsachController::class);
+Route::resource('/quanlymuonsach',QuanlyMuonsachController::class);
 Route::resource('/thanhvien',ThanhvienController::class);
 
 

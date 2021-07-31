@@ -50,13 +50,18 @@ class DanhmucController extends Controller
     {
         $validated = $request->validate([
             'tendanhmuc' => 'required|unique:danhmuc|max:255',
+            'slugdanhmuc' => 'required|unique:danhmuc|max:255',
         ],  
         [
-            'tendanhmuc.required' => 'tên danh mục phải có',
+            'tendanhmuc.unique' => 'tên danh mục đã có,vui lòng điền tên khác',
+            'slugdanhmuc.unique' => 'slug danh mục đã có,vui lòng điền tên khác',
+            'tendanhmuc.required' => 'tên danh mục phải có nhé',
+            'slugdanhmuc.required' => 'slug danh mục phải có nhé',
         ]);
 
         $danhmucsach = new DanhmucSach();
         $danhmucsach -> tendanhmuc = $validated['tendanhmuc'];
+        $danhmucsach -> slugdanhmuc = $validated['slugdanhmuc'];
         $danhmucsach ->save();
         return redirect()->back()->with('status','Thêm danh mục thành công');
 
@@ -97,13 +102,18 @@ class DanhmucController extends Controller
     {
         $validated = $request->validate([
             'tendanhmuc' => 'required|unique:danhmuc|max:255',
+            'slugdanhmuc' => 'required|unique:danhmuc|max:255'
         ],  
         [
+            'tendanhmuc.unique' => 'tên danh mục đã có,vui lòng điền tên khác',
+            'slugdanhmuc.unique' => 'slug danh mục đã có,vui lòng điền tên khác',
             'tendanhmuc.required' => 'tên danh mục phải có',
+            'slugdanhmuc.required' => 'slug danh mục phải có'
         ]);
 
         $danhmucsach = DanhmucSach::find($id_Danhmuc);
         $danhmucsach -> tendanhmuc = $validated['tendanhmuc'];
+        $danhmucsach -> slugdanhmuc = $validated['slugdanhmuc'];
         $danhmucsach ->save();
         return redirect()->back()->with('status','Cập nhật danh mục thành công');
 

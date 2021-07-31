@@ -2,95 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Muontra;
 use Illuminate\Http\Request;
+use App\Models\Sach;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
 
 class MuonsachController extends Controller
 {
-   /**
-     * 
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+   
+    public function index(Request $request)
+    {  
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra')
+        ->where('users.id',Auth::id())
+        ->get();
+        return view('homepage.muonsach')->with(compact('muon'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('admin.muonsach.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    {   
+        $muonsach = new Muontra();
+        $muonsach-> id_Sach = $request['id_Sach'];
+        $muonsach -> id = $request['id'];
+        $muonsach -> ngay_Muon = date('Y-m-d');
+        $muonsach -> ngay_Hentra = date('Y-m-d', strtotime('+1 years'));
+        $muonsach ->save();
+        return redirect()->back()->with('status','Gửi yêu cầu mượn sách thành công,vui lòng đợi');
     }
 }

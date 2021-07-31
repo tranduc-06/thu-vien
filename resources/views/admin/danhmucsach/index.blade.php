@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col">Stt</th>
                 <th scope="col">Tên danh mục</th>
+                <th scope="col">Slug danh mục</th>
                 <th scope="col">Quản lý</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
             <tr>
                 <th scope="row">{{$key}}</th>
                 <td>{{$danhmuc->tendanhmuc}}</td>
+                <td>{{$danhmuc->slugdanhmuc}}</td>
                 <td>
                 <div style="display:flex;">
                     <span><a href="{{route('danhmucsach.edit',[$danhmuc->id_Danhmuc])}}" class="btn btn-primary btn-sm">edit</a></span>

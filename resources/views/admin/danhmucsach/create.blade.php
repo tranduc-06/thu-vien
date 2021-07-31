@@ -30,7 +30,12 @@
 
         <div class="form-group">
             <label for="tendanhmuc">Tên danh mục</label>
-            <input type="text" class="form-control" value="{{ old('tendanhmuc')}}" name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
+            <input type="text" class="form-control" value="{{ old('tendanhmuc')}}" onkeyup="ChangeToSlug()" name="tendanhmuc" id="slug" placeholder="Tên danh mục">
+        </div>
+
+        <div class="form-group">
+            <label for="tendanhmuc">Slug danh mục</label>
+            <input type="text" class="form-control" value="{{ old('slugdanhmuc')}}" name="slugdanhmuc" id="convert_slug" placeholder="Slug danh mục">
         </div>
         <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

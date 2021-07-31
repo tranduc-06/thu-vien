@@ -30,9 +30,12 @@
 
     <div class="form-group">
         <label for="tensach">Tên sách</label>
-        <input type="text" class="form-control" value="{{ old('tensach')}}" name="tensach" id="tensach" placeholder="Tên sách">
+        <input type="text" class="form-control" onkeyup="ChangeToSlug()" value="{{ old('tensach')}}" name="tensach" id="slug" placeholder="Tên sách">
     </div>
-
+    <div class="form-group">
+        <label for="slugsach">Slug sách</label>
+        <input type="text" class="form-control" value="{{ old('slugsach')}}" name="slugsach" id="convert_slug" placeholder="Slug sách">
+    </div>
     <div class="form-group">
         <label for="danhmuc">Tên danh mục</label>
         <select class="form-control" id="danhmuc" name="danhmuc">
@@ -41,13 +44,14 @@
             @endforeach
         </select>
     </div>
+  
     <div class="form-group">
         <label for="tacgia">Tác giả</label>
         <input type="text" class="form-control" value="{{ old('tentacgia')}}" name="tentacgia" id="tentacgia" placeholder="Tên tác giả">
     </div>
     <div class="form-group">
         <label for="namxuatban">Năm xuất bản</label>
-        <input type="text" class="form-control" value="{{ old('namxuatban')}}" name="namxuatban" id="namxuatban" placeholder="Năm xuất bản">
+        <input type="number" class="form-control" value="{{ old('namxuatban')}}" name="namxuatban" id="namxuatban" placeholder="Năm xuất bản" max=2021>
     </div>
     <div class="form-group">
         <label for="nhaxuatban">Nhà xuất bản</label>

@@ -13,6 +13,7 @@
         <tr>
             <th scope="col">STT</th>
             <th scope="col">Tên sách</th>
+            <th scope="col">Slug sách</th>
             <th scope="col">Tên tác giả</th>
             <th scope="col"> Danh mục </th>
             <th scope="col"> Nhà xuất bản </th>
@@ -27,6 +28,7 @@
         <tr>
             <td scope="row">{{$key}}</td>
             <td>{{$sach->tensach}}</td>
+            <td>{{$sach->slugsach}}</td>
             <td>{{$sach->tentacgia}}</td>
             <td>{{$sach->danhmucsach->tendanhmuc}}</td>
             <td>{{$sach->nhaxuatban}}</td>

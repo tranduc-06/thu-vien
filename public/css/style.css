@@ -9510,7 +9510,7 @@ a:focus {
   width: 175px;
 }
 .facts-counter ul li .fact-item .fact-icon {
-  background-image: url("images/facts-count-icons-v1.png");
+  background-image: url("{{asset('images/facts-count-icons-v1.png')}}");
   float: left;
   height: 67px;
   margin-right: 10px;

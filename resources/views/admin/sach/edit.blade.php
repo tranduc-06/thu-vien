@@ -30,7 +30,11 @@
 
     <div class="form-group">
         <label for="tensach">Tên sách</label>
-        <input type="text" class="form-control" value="{{ old('tensach')}}" name="tensach" id="tensach" placeholder="Tên sách">
+        <input type="text" class="form-control" onkeyup="ChangeToSlug()" value="{{$sach->tensach}}" name="tensach" id="slug" placeholder="Tên sách">
+    </div>
+    <div class="form-group">
+        <label for="slugsach">Slug sách</label>
+        <input type="text" class="form-control" value="{{$sach->slugsach}}" name="slugsach" id="convert_slug" placeholder="Slug sách">
     </div>
 
     <div class="form-group">
@@ -43,15 +47,15 @@
     </div>
     <div class="form-group">
         <label for="tacgia">Tác giả</label>
-        <input type="text" class="form-control" value="{{ old('tentacgia')}}" name="tentacgia" id="tentacgia" placeholder="Tên tác giả">
+        <input type="text" class="form-control" value="{{$sach->tentacgia}}" name="tentacgia" id="tentacgia" placeholder="Tên tác giả">
     </div>
     <div class="form-group">
         <label for="namxuatban">Năm xuất bản</label>
-        <input type="text" class="form-control" value="{{ old('namxuatban')}}" name="namxuatban" id="namxuatban" placeholder="Năm xuất bản">
+        <input type="number" class="form-control" value="{{$sach->namxuatban}}" name="namxuatban" id="namxuatban" placeholder="Năm xuất bản" max=2021>
     </div>
     <div class="form-group">
         <label for="nhaxuatban">Nhà xuất bản</label>
-        <input type="text" class="form-control" value="{{ old('nhaxuatban')}}" name="nhaxuatban" id="nhaxuatban" placeholder="Nhà xuất bản">
+        <input type="text" class="form-control" value="{{$sach->nhaxuatban}}" name="nhaxuatban" id="nhaxuatban" placeholder="Nhà xuất bản">
     </div>
     <div class="form-group">
         <label for="hinhanh">Hình ảnh</label>
@@ -61,7 +65,7 @@
 
     <div>
         <label for="tomtat">Tóm tắt</label>
-        <textarea class="form-control" name="tomtat" rows="5" style="resize: none;"></textarea>
+        <textarea class="form-control" value="{{$sach->tomtat}}" name="tomtat" rows="5" style="resize: none;"></textarea>
     </div><br>
     <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

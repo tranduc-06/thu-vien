@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class ThanhvienController extends Controller
+class QuanlyMuonsachController extends Controller
 {
-
-  /**
+    /**
      * 
      * @return void
      */
@@ -27,8 +25,7 @@ class ThanhvienController extends Controller
      */
     public function index()
     {
-        $thanhvien = User::all();
-        return view('admin.thanhvien.index')-> with(compact('thanhvien'));
+        return view('admin.muonsach.index');
     }
 
     /**

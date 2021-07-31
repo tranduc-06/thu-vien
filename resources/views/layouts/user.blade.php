@@ -19,11 +19,11 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
+    
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
 
     <!-- Mobile Menu -->
@@ -31,6 +31,7 @@
     <link href="{{ asset('css/mmenu.positioning.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Stylesheet -->
+
     <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css" />
 
 
@@ -55,7 +56,7 @@
                             <div class="navbar-header">
                                 <div class="navbar-brand">
                                     <h1>
-                                        <a href="index-2.html">
+                                        <a href="{{url('/')}}">
                                             <img src="{{ asset('images/libraria-logo-v1.png')}}" alt="LIBRARIA" />
                                         </a>
                                     </h1>
@@ -94,13 +95,11 @@
 
                                     </li>
                                     <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="books-media-list-view.html">Books &amp; Media</a>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Danh mục sách</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="books-media-list-view.html">Books &amp; Media List View</a></li>
-                                            <li><a href="books-media-gird-view-v1.html">Books &amp; Media Grid View V1</a></li>
-                                            <li><a href="books-media-gird-view-v2.html">Books &amp; Media Grid View V2</a></li>
-                                            <li><a href="books-media-detail-v1.html">Books &amp; Media Detail V1</a></li>
-                                            <li><a href="books-media-detail-v2.html">Books &amp; Media Detail V2</a></li>
+                                            @foreach($danhmuc as $key => $value)
+                                            <li><a href="{{url('danh-muc/'.$value->slugdanhmuc)}}">{{$value->tendanhmuc}}</a></li>
+                                           @endforeach
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -123,7 +122,7 @@
                                         <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Thông tin cá nhân</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="blog.html">Thẻ thành viên</a></li>
-                                            <li><a href="blog-detail.html">Thông tin mượn</a></li>
+                                            <li><a href="{{url('muon-sach')}}">Thông tin mượn</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="services.html">Services</a></li>
@@ -141,12 +140,8 @@
                                     <a href="#" class="close"></a>
                                 </li>
                                 <li>
-                                    <a href="index-2.html">Home</a>
-                                    <ul>
-                                        <li><a href="index-2.html">Home V1</a></li>
-                                        <li><a href="home-v2.html">Home V2</a></li>
-                                        <li><a href="home-v3.html">Home V3</a></li>
-                                    </ul>
+                                    <a href="{{url('/')}}">Home</a>
+                                    
                                 </li>
                                 <li>
                                     <a href="books-media-list-view.html">Books &amp; Media</a>
@@ -259,18 +254,21 @@
         <div class="container">
             <div class="filter-box">
                 <h3>What are you looking for at the library?</h3>
-                <form action="http://libraria.demo.presstigers.com/index.html" method="get">
+                <form action="{{url('tim-kiem')}}" method="get">
+                    @csrf
+                    <div class="col-md-3 col-sm-6">
+                    </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="form-group">
                             <label class="sr-only" for="keywords">Search by Keyword</label>
-                            <input class="form-control" placeholder="Search by Keyword" id="keywords" name="keywords" type="text">
+                            <input class="form-control" placeholder="Search by Keyword" id="tukhoa" name="tukhoa" type="text">
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
+                    <!-- <div class="col-md-3 col-sm-6">
                         <div class="form-group">
                             <select name="catalog" id="catalog" class="form-control">
                                 <option>Search the Author</option>
-                                @foreach ($tacgia as $key => $tac)
+                                @foreach ($sach as $key => $tac)
                                 <option>{{$tac->tentacgia}}</option>
                                 @endforeach
               
@@ -286,7 +284,7 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-2 col-sm-6">
                         <div class="form-group">
                             <input class="form-control" type="submit" value="Search">
@@ -296,6 +294,8 @@
             </div>
         </div>
     </section>
+
+    @yield('content2')
     
 
     <footer class="site-footer">
@@ -377,9 +377,6 @@
                 </div>
             </div>
         </div>
-        <div>
-        @yield('content2')
-        </div>
 
         <div class="sub-footer">
             <div class="container">
@@ -389,7 +386,7 @@
                     </div>
                     <div class="col-md-9 pull-right">
                         <ul>
-                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="{{url('/')}}">Home</a></li>
                             <li><a href="books-media-list-view.html">Books &amp; Media</a></li>
                             <li><a href="news-events-list-view.html">News &amp; Events</a></li>
                             <li><a href="#">Kids &amp; Teens</a></li>

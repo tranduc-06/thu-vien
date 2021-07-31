@@ -10,30 +10,23 @@
             <th scope="col">Điện thoại</th>
             <th scope="col">Email</th>
             <th scope="col">Ngày bắt đầu</th>
-            <th scope="col">Ngày kết thúc</th>
             <th scope="col">Địa chỉ</th>
            
         </tr>
     </thead>
     <tbody>
+        @foreach ($thanhvien as $key => $value)
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">{{$key}}</th>
+            <td>{{$value->id}}</td>
+            <td>{{$value->name}}</td>
+            <td>{{$value->phone}}</td>
+            <td>{{$value->email}}</td>
+            <td>{{$value->created_at}}</td>
+            <td>{{$value->address}}</td>
+
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
+       @endforeach
     </tbody>
 </table>
 

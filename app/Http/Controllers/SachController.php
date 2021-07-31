@@ -53,8 +53,9 @@ class SachController extends Controller
     {
         $validated = $request->validate([
             'tensach' => 'required|unique:sach|max:255',
+            'slugsach' => 'required|unique:sach|max:255',
             'hinhanh' => 'required|image|mimes:jpg,png,gif,svg|max:4096|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-            'tomtat' => 'required|unique:sach|max:255',
+            'tomtat' => 'required|max:255',
             'nhaxuatban' => 'required',
             'namxuatban' => 'required|max:2021',
             'tentacgia' => 'required',
@@ -63,14 +64,17 @@ class SachController extends Controller
         ],  
         [
             'tensach.required' => 'Tên sách phải có nhé',
+            'slug.required' => 'Slug sách phải có nhé',
             'tensach.unique' => 'Tên sách đã có vui lòng chọn tên khác',
+            'namxuatban.max' => 'Vui lòng nhập lại năm xuất bản',
             'hinhanh.required' => 'Hình ảnh phải có nhé',
-            'tomtat.required' => 'Tóm tắt phải có nhé'
+            'tomtat.required' => 'Tóm tắt phải có nhé',
 
         ]);
 
         $sach = new Sach();
         $sach -> tensach = $validated['tensach'];
+        $sach -> slugsach = $validated['slugsach'];
         $sach -> tomtat = $validated['tomtat'];
         $sach -> nhaxuatban = $validated['nhaxuatban'];
         $sach -> namxuatban = $validated['namxuatban'];
@@ -127,6 +131,7 @@ class SachController extends Controller
     {
         $validated = $request->validate([
             'tensach' => 'required|unique:sach|max:255',
+            'slugsach' => 'required',
             'hinhanh' => 'required|image|mimes:jpg,png,gif,svg|max:4096|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
             'tomtat' => 'required|unique:sach|max:255',
             'nhaxuatban' => 'required',
@@ -139,6 +144,7 @@ class SachController extends Controller
             'tensach.required' => 'Tên sách phải có nhé',
             'tensach.unique' => 'Tên sách đã có vui lòng chọn tên khác',
             'hinhanh.required' => 'Hình ảnh phải có nhé',
+            'namxuatban.max' => 'Vui lòng nhập lại năm xuất bản',
             'tomtat.required' => 'Tóm tắt phải có nhé',
             'namxuatban.required' => 'Vui lòng nhập đúng năm'
 
@@ -146,6 +152,7 @@ class SachController extends Controller
 
         $sach = Sach::find($id_Sach);
         $sach -> tensach = $validated['tensach'];
+        $sach -> slugsach = $validated['slugsach'];
         $sach -> tomtat = $validated['tomtat'];
         $sach -> nhaxuatban = $validated['nhaxuatban'];
         $sach -> namxuatban = $validated['namxuatban'];

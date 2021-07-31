@@ -50,7 +50,7 @@
                     </li>
 
                     <li>
-                        <a href="{{route('muonsach.index')}}">
+                        <a href="{{route('quanlymuonsach.index')}}">
                             <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i>
                             </span>
                             <span class="title">Require</span>
@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a href="{{route('muonsach.index')}}">
+                        <a href="{{route('quanlymuonsach.index')}}">
                             <span class="icon"><i class="fa fa-reply-all" aria-hidden="true"></i>
                             </span>
                             <span class="title">Borrow</span>

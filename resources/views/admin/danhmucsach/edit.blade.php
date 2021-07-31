@@ -29,8 +29,13 @@
         @csrf
         <div class="form-group">
             <label for="tendanhmuc">Tên danh mục</label>
-            <input type="text" class="form-control" value="{{$danhmucsach->tendanhmuc}}" name="tendanhmuc" id="tendanhmuc" placeholder="Tên danh mục">
+            <input type="text" class="form-control" value="{{$danhmucsach->tendanhmuc}}" onkeyup="ChangeToSlug()" name="tendanhmuc" id="slug" placeholder="Tên danh mục">
         </div>
+        <div class="form-group">
+            <label for="slugdanhmuc">Slug danh mục</label>
+            <input type="text" class="form-control" value="{{$danhmucsach->slugdanhmuc}}" name="slugdanhmuc" id="convert_slug" placeholder="Slug danh mục">
+        </div>
+
         <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>

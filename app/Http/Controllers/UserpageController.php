@@ -2,89 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\DanhmucSach;
+use Illuminate\Http\Request;
 use App\Models\Sach;
+use App\Models\User;
 
 class UserpageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $tacgia = Sach::orderBy('id_Sach','DESC')->get();
+        $sach = Sach::orderBy('id_Sach','DESC')->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-        return view('homepage.userpage')->with(compact('danhmuc','tacgia'));
+        return view('homepage.userpage')->with(compact('danhmuc','sach'));
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function danhmuc($slugdanhmuc)
     {
-        //
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $danhmuc_id = DanhmucSach::where('slugdanhmuc',$slugdanhmuc)->first();       
+        $sach = Sach::orderBy('id_Sach','DESC')->where('id_Danhmuc',$danhmuc_id->id_Danhmuc)->get();
+        return view('homepage.danhmuc')->with(compact('danhmuc','sach'));
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function chitiet($slugsach)
     {
-        //
+        $user = auth() -> user ();
+        $sach = Sach::orderBy('id_Sach','DESC')->where('slugsach',$slugsach)->get();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        return view('homepage.chitiet')->with(compact('danhmuc','sach','user'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function timkiem()
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+       
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $tukhoa = $_GET['tukhoa'];
+        $sach = Sach::with('danhmucsach')->where(function($query) {
+            $tukhoa = $_GET['tukhoa'];
+            $query->where('tensach','LIKE','%'.$tukhoa.'%')
+                 ->orWhere('tentacgia','LIKE','%'.$tukhoa.'%')
+                 ->orWhere('nhaxuatban','LIKE','%'.$tukhoa.'%')
+                 ;})->get();
+        return view('homepage.timkiem')->with(compact('danhmuc','sach','tukhoa'));
     }
 }
