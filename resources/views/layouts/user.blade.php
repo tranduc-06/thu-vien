@@ -264,27 +264,6 @@
                             <input class="form-control" placeholder="Search by Keyword" id="tukhoa" name="tukhoa" type="text">
                         </div>
                     </div>
-                    <!-- <div class="col-md-3 col-sm-6">
-                        <div class="form-group">
-                            <select name="catalog" id="catalog" class="form-control">
-                                <option>Search the Author</option>
-                                @foreach ($sach as $key => $tac)
-                                <option>{{$tac->tentacgia}}</option>
-                                @endforeach
-              
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="form-group">
-                            <select name="category" id="category" class="form-control">
-                            <option>Search the Category</option>
-                                @foreach($danhmuc as $key => $danh)
-                                <option>{{$danh->tendanhmuc}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div> -->
                     <div class="col-md-2 col-sm-6">
                         <div class="form-group">
                             <input class="form-control" type="submit" value="Search">

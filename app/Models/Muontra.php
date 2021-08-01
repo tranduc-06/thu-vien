@@ -10,7 +10,7 @@ class Muontra extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = ['id_Sach','id','ngay_Muon','ngay_Hentra','ngay_Tra','tinhtrang'];
-    protected $primaryKey = 'id_Sach,id';
+    protected $primaryKey = 'id_Muontra';
     protected $table = 'muontra';
     
     public function sach()

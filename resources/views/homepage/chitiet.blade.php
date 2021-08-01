@@ -22,9 +22,11 @@
 
 <form action="{{url('muon-sach')}}" method="post">
   @csrf
-  <input type="hidden" name="id" value="{{$user->id}}">
+  <input type="hidden" name="tinhtrang" value="Đang chờ"/>
+  <input type="hidden" name="id" value="{{$user->id}}"/>
   <input type="hidden" name="id_Sach" value="{{$chitiet->id_Sach}}"/>
   <button type="submit" class="btn btn-primary btn-sm">Mượn</button>
 </form>
 
 @endif
+

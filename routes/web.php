@@ -44,7 +44,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 Route::resource('/danhmucsach',DanhmucController::class);
 Route::resource('/sach',SachController::class);
 Route::resource('/dashboard',DashboardController::class);
-Route::resource('/quanlymuonsach',QuanlyMuonsachController::class);
+Route::get('/quanlymuonsach',[QuanlyMuonsachController::class, 'index'])->middleware('auth');
+Route::post('/quanlymuonsach/dongy',[QuanlyMuonsachController::class, 'dongy']);
+Route::post('/quanlymuonsach/tuchoi',[QuanlyMuonsachController::class, 'tuchoi']);
+Route::post('/quanlymuonsach/datra',[QuanlyMuonsachController::class, 'datra']);
 Route::resource('/thanhvien',ThanhvienController::class);
 
 

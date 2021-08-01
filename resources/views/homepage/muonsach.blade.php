@@ -1,3 +1,11 @@
+@extends('layouts.user')
+@section('content2')
+<section>
+  <div class="text-center">
+ 
+   <h2 style="color:black">Sách bạn đang mượn</h2>
+  
+</div> <br>
 <table class="table">
   <thead>
     <tr>
@@ -15,11 +23,13 @@
     
       <th scope="row">{{$key}}</th>
       <td>{{$value->tensach}}</td>  
-      <td>{{$value ->ngay_Muon}}</td>
-      <td>{{$value ->ngay_Hentra}}</td>
-      <td></td>
-      <td></td>   
+      <td>{{$value->ngay_Muon}}</td>
+      <td>{{$value->ngay_Hentra}}</td>
+      <td>{{$value->ngay_Tra}}</td>
+      <td>{{$value->tinhtrang}}</td>   
     </tr>
     @endforeach
   </tbody>
 </table>
+</section>
+@endsection

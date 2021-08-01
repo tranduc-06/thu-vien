@@ -4,93 +4,64 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Muontra;
+use App\Models\Sach;
+use App\Models\User;
+use App\Models\DanhmucSach;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class QuanlyMuonsachController extends Controller
 {
-    /**
-     * 
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function index() {
+
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id','muontra.id_Muontra', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->get();
+        return view('admin.quanlymuonsach.index')->with(compact('muon','danhmuc'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function dongy(Request $request)
     {
-        return view('admin.muonsach.index');
+        $id_Muontra = $request ->id_Muontra;
+        $muonsach = Muontra::find($id_Muontra);
+        $muonsach->tinhtrang = 'Đồng ý';
+        $muonsach->save();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->get();
+        return redirect()->back()->with('status','Bạn đã đồng ý cho mượn quyển sách này');    
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function tuchoi(Request $request)
     {
-        //
-    }
+        $id_Muontra = $request ->id_Muontra;
+        $muonsach = Muontra::find($id_Muontra);
+        $muonsach->tinhtrang = 'Từ chối';
+        $muonsach->save();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->get();
+        return redirect()->back()->with('status','Bạn đã từ chối cho mượn quyển sách này');     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function datra(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+        $id_Muontra = $request ->id_Muontra;
+        $muonsach = Muontra::find($id_Muontra);
+        $muonsach-> tinhtrang = 'Đã trả';
+        $muonsach-> ngay_Tra = date('Y-m-d');
+        $muonsach->save();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->get();  
+        return redirect()->back()->with('status','Đồng ý trả sách thành công');     }
+    
 }

@@ -25,6 +25,8 @@ class UserpageController extends Controller
         
     }
 
+
+
     public function chitiet($slugsach)
     {
         $user = auth() -> user ();
