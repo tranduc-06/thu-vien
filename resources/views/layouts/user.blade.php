@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 
     <!-- Meta -->
@@ -19,7 +20,7 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    
+
     <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet">
 
@@ -77,12 +78,25 @@
                                     <div class="col-sm-6">
 
                                         <div class="topbar-links">
+                                            @guest
+                                            @if (Route::has('login'))
                                             <a href="{{ route('login') }}"><i class="fa fa-lock"></i>Login</a>
-                                            <span>|<a href="" {{route('logout')}}" onclick="event.preventDefault();
+                                            @endif
+                                            @if (Route::has('register'))
+                                            <span>|
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                            </span>
+                                            @endif
+                                            @else
+                                            <span>{{Auth::user()->name }}</span>
+                                            <span>|<a href="{{route('logout')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();""> <i class=" fa fa-lock"></i>Logout</a> </span>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
+
+                                            @endguest
+
 
                                         </div>
                                     </div>
@@ -95,11 +109,11 @@
 
                                     </li>
                                     <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Danh mục sách</a>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" disable>Danh mục sách</a>
                                         <ul class="dropdown-menu">
                                             @foreach($danhmuc as $key => $value)
                                             <li><a href="{{url('danh-muc/'.$value->slugdanhmuc)}}">{{$value->tendanhmuc}}</a></li>
-                                           @endforeach
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -119,9 +133,9 @@
                                         </ul>
                                     </li> -->
                                     <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="blog.html">Thông tin cá nhân</a>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" disable">Thông tin cá nhân</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="blog.html">Thẻ thành viên</a></li>
+                                            <li><a href="{{url('the-thanh-vien')}}">Thẻ thành viên</a></li>
                                             <li><a href="{{url('muon-sach')}}">Thông tin mượn</a></li>
                                         </ul>
                                     </li>
@@ -141,7 +155,7 @@
                                 </li>
                                 <li>
                                     <a href="{{url('/')}}">Home</a>
-                                    
+
                                 </li>
                                 <li>
                                     <a href="books-media-list-view.html">Books &amp; Media</a>
@@ -275,7 +289,7 @@
     </section>
 
     @yield('content2')
-    
+
 
     <footer class="site-footer">
         <div class="container">

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header id="header-v1" class="navbar-wrapper" style = "background-image: url('images/header-slide.jpg')">
+    <header id="header-v1" class="navbar-wrapper" >
         <div class="container">
             <div class="row">
                 <nav class="navbar navbar-default">

@@ -6,11 +6,13 @@ use App\Models\DanhmucSach;
 use Illuminate\Http\Request;
 use App\Models\Sach;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserpageController extends Controller
 {
     public function index()
-    {
+    { 
         $sach = Sach::orderBy('id_Sach','DESC')->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
         return view('homepage.userpage')->with(compact('danhmuc','sach'));
@@ -47,5 +49,14 @@ class UserpageController extends Controller
                  ->orWhere('nhaxuatban','LIKE','%'.$tukhoa.'%')
                  ;})->get();
         return view('homepage.timkiem')->with(compact('danhmuc','sach','tukhoa'));
+    }
+
+    public function thethanhvien()
+    {
+        $user = auth() -> user ();
+        $id = $user->id;
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $thanhvien = User::all()->where('id',$id);
+        return view('homepage.thethanhvien')->with(compact('thanhvien','danhmuc'));
     }
 }

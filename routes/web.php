@@ -28,10 +28,12 @@ use App\Models\DanhmucSach;
 
 Route::get('/',[UserpageController::class, 'index']);
 Route::get('/danh-muc/{slugdanhmuc}',[UserpageController::class, 'danhmuc']);
-Route::get('/chi-tiet/{slugsach}',[UserpageController::class, 'chitiet']);
+Route::get('/chi-tiet/{slugsach}',[UserpageController::class, 'chitiet'])->middleware('auth');
 Route::get('/tim-kiem',[UserpageController::class, 'timkiem']);
-Route::post('/muon-sach',[MuonsachController::class, 'store'])->middleware('auth');
-Route::get('/muon-sach',[MuonsachController::class, 'index'])->middleware('auth');
+Route::post('/muon-sach-1',[MuonsachController::class, 'store'])->middleware('checkborrowed');
+Route::get('/muon-sach',[MuonsachController::class, 'index'])->middleware('auth');;
+Route::get('/the-thanh-vien',[UserpageController::class, 'thethanhvien'])->middleware('auth');
+
 
 
 
@@ -45,6 +47,7 @@ Route::resource('/danhmucsach',DanhmucController::class);
 Route::resource('/sach',SachController::class);
 Route::resource('/dashboard',DashboardController::class);
 Route::get('/quanlymuonsach',[QuanlyMuonsachController::class, 'index'])->middleware('auth');
+Route::get('/quanlymuonsach/require',[QuanlyMuonsachController::class, 'require'])->middleware('auth');
 Route::post('/quanlymuonsach/dongy',[QuanlyMuonsachController::class, 'dongy']);
 Route::post('/quanlymuonsach/tuchoi',[QuanlyMuonsachController::class, 'tuchoi']);
 Route::post('/quanlymuonsach/datra',[QuanlyMuonsachController::class, 'datra']);

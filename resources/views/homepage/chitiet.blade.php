@@ -15,12 +15,10 @@
 
   @endforeach
 </ul>
-@if(empty($user->id) && empty(chitiet->id_Sach))
-    <p>Bạn đã mượn sách này,vui lòng chọn sách khác</p>
-@else
 
 
-<form action="{{url('muon-sach')}}" method="post">
+
+<form action="{{url('muon-sach-1')}}" method="post">
   @csrf
   <input type="hidden" name="tinhtrang" value="Đang chờ"/>
   <input type="hidden" name="id" value="{{$user->id}}"/>
@@ -28,5 +26,4 @@
   <button type="submit" class="btn btn-primary btn-sm">Mượn</button>
 </form>
 
-@endif
 

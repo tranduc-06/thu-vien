@@ -50,7 +50,7 @@
                     </li>
 
                     <li>
-                        <a href="{{url('quanlymuonsach')}}">
+                        <a href="{{url('quanlymuonsach/require')}}">
                             <span class="icon"><i class="fa fa-check-square" aria-hidden="true"></i>
                             </span>
                             <span class="title">Require</span>
