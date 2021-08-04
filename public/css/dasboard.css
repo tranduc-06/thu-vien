@@ -60,7 +60,9 @@ body
     color: white;
 
 }
-.navigation ul li a .icon
+.navigation ul li a .icon,
+.navigation ul li a .img
+
 {
     position: relative;
     display: block;

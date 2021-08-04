@@ -2,6 +2,13 @@
 
 @section('content1')
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+  </ol>
+</nav>
+
 <div class="wrapper1">
 
   <!-- Preloader -->
@@ -72,9 +79,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{$new_users}}</h3>
 
-                <p>User Registrations</p>
+                <p>Thành viên mới</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>

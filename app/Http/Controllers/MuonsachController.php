@@ -28,22 +28,16 @@ class MuonsachController extends Controller
 
     public function store(Request $request)
     {   
-        $id_Sach = Muontra::pluck('id_Sach')->where('id_Sach',$request->id_Sach);
-        $id = Muontra::pluck('id')->where('id',$request->id);
-        if(($id) && ($id_Sach)) 
-        {
-            return redirect()->back()->with('status','Bạn đã mượn quyển sách này,không thể mượn thêm nữa');
-        }
-        else
+  
+            $muonsach = new Muontra();
+            $muonsach-> id_Sach = $request['id_Sach'];
+            $muonsach -> id = $request['id'];
+            $muonsach -> ngay_Muon = date('Y-m-d');
+            $muonsach -> ngay_Hentra = date('Y-m-d', strtotime('+1 years'));
+            $muonsach -> tinhtrang = $request['tinhtrang'];
+            $muonsach ->save();
+            return redirect()->back()->with('status','Gửi yêu cầu mượn sách thành công,vui lòng đợi');
 
-        $muonsach = new Muontra();
-        $muonsach-> id_Sach = $request['id_Sach'];
-        $muonsach -> id = $request['id'];
-        $muonsach -> ngay_Muon = date('Y-m-d');
-        $muonsach -> ngay_Hentra = date('Y-m-d', strtotime('+1 years'));
-        $muonsach -> tinhtrang = $request['tinhtrang'];
-        $muonsach ->save();
-        return redirect()->back()->with('status','Gửi yêu cầu mượn sách thành công,vui lòng đợi');
-
+               
     }
 }

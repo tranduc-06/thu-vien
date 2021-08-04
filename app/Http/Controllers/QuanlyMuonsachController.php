@@ -66,7 +66,7 @@ class QuanlyMuonsachController extends Controller
 
     public function datra(Request $request)
     {
-        // $ngay_Muon = $request->ngay_Muon;
+        $ngay_Muon = $request->ngay_Muon;
         // $tra = date('Y-m-d');
        
         // $first_datetime = new DateTime($ngay_Muon);
@@ -75,8 +75,14 @@ class QuanlyMuonsachController extends Controller
         // dump($check_Date);
         $id_Muontra = $request ->id_Muontra;
         $muonsach = Muontra::find($id_Muontra);
-        $muonsach-> tinhtrang = 'Đã trả';
         $muonsach-> ngay_Tra = date('Y-m-d');
+
+        if(Muontra::DATEDIFF(date('Y-m-d'),'$ngay_Muon') < 0)
+
+        $muonsach-> tinhtrang = 'Đã trả';
+        else
+        $muonsach-> tinhtrang = 'Qúa hạn';
+
         $muonsach->save();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
         $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')

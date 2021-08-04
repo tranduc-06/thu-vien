@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Libraria') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -117,7 +117,7 @@
             </div>
         </nav>
  
-        <main>
+        <main style="background-image: url('images/back.jpg')">
             @yield('content')
         </main>
     </div>

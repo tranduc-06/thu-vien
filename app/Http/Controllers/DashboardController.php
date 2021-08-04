@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DanhmucSach;
 use App\Models\Sach;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -28,7 +29,8 @@ class DashboardController extends Controller
     public function index()
     {
         $total_books = Sach::all()-> count();
-        return view('admin.dashboard.index')->with(compact('total_books'));
+        $new_users = User::all()->where('User::DATEDIFF(CURRENT_DATE,`created_at`)','<','30')->count();
+        return view('admin.dashboard.index')->with(compact('total_books','new_users'));
     }
 
     /**

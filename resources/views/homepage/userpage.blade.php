@@ -1,6 +1,6 @@
 @extends('layouts.user')
 @section('content2')
-    <section class="welcome-section">
+    <!-- <section class="welcome-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="welcome-image" style="background-image: url(" {{asset('images/welcome-img-home-v1.jpg')}}")"></div>
-    </section>
+    </section> -->
     <!-- End: Welcome Section -->
 
 
@@ -309,10 +309,11 @@
                         @foreach($sach as $key => $value)
                         <div class="col-md-3">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="{{asset('uploads/sach/'.$value->hinhanh)}}">
+                                <img class="card-img-top" src="{{asset('uploads/sach/'.$value->hinhanh)}}" width="200px" height="300px">
                                 <div class="card-body">
-                                    <h5>{{$value->tensach}}</h5>
-                                    <p class="card-text">{{$value->tomtat}}</p>
+                                    <br>
+                                    <p><strong>{{$value->tensach}}</strong></p>
+                                    <p class="card-text">{{$value->tentacgia}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a>

@@ -32,6 +32,7 @@
     <link href="{{ asset('css/mmenu.positioning.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Stylesheet -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
     <link href="{{ asset('css/style.css')}}" rel="stylesheet" type="text/css" />
 
@@ -101,11 +102,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="navbar-collapse hidden-sm hidden-xs">
+                                </div>
+                                <div class="navbar-collapse hidden-sm hidden-xs">
                                 <ul class="nav navbar-nav">
                                     <li class="dropdown active">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{{url('/')}}">Home</a>
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="{{url('/')}}">Trang chủ</a>
 
                                     </li>
                                     <li class="dropdown">
@@ -115,14 +116,8 @@
                                             <li><a href="{{url('danh-muc/'.$value->slugdanhmuc)}}">{{$value->tendanhmuc}}</a></li>
                                             @endforeach
                                         </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" href="news-events-list-view.html">News &amp; Events</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="news-events-list-view.html">News &amp; Events List View</a></li>
-                                            <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
-                                        </ul>
-                                    </li>
+    </li>
+                            
                                     <!-- <li class="dropdown">
                                         <a data-toggle="dropdown" class="dropdown-toggle disabled" href="#">Pages</a>
                                         <ul class="dropdown-menu">
@@ -154,26 +149,18 @@
                                     <a href="#" class="close"></a>
                                 </li>
                                 <li>
-                                    <a href="{{url('/')}}">Home</a>
+                                    <a href="{{url('/')}}">Trang chủ</a>
 
                                 </li>
-                                <li>
-                                    <a href="books-media-list-view.html">Books &amp; Media</a>
-                                    <ul>
-                                        <li><a href="books-media-list-view.html">Books &amp; Media List View</a></li>
-                                        <li><a href="books-media-gird-view-v1.html">Books &amp; Media Grid View V1</a></li>
-                                        <li><a href="books-media-gird-view-v2.html">Books &amp; Media Grid View V2</a></li>
-                                        <li><a href="books-media-detail-v1.html">Books &amp; Media Detail V1</a></li>
-                                        <li><a href="books-media-detail-v2.html">Books &amp; Media Detail V2</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="news-events-list-view.html">News &amp; Events</a>
-                                    <ul>
-                                        <li><a href="news-events-list-view.html">News &amp; Events List View</a></li>
-                                        <li><a href="news-events-detail.html">News &amp; Events Detail</a></li>
-                                    </ul>
-                                </li>
+
+                                <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" disable>Danh mục sách</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach($danhmuc as $key => $value)
+                                            <li><a href="{{url('danh-muc/'.$value->slugdanhmuc)}}">{{$value->tendanhmuc}}</a></li>
+                                            @endforeach
+                                        </ul>
+    </li>
                                 <!-- <li>
                                     <a href="#">Pages</a>
                                     <ul>
@@ -183,13 +170,13 @@
                                         <li><a href="404.html">404/Error</a></li>
                                     </ul>
                                 </li> -->
-                                <li>
-                                    <a href="blog.html">Thông tin cá nhân</a>
-                                    <ul>
-                                        <li><a href="#">Thẻ thành viên</a></li>
-                                        <li><a href="#">Thông tin mượn</a></li>
-                                    </ul>
-                                </li>
+                                <li class="dropdown">
+                                        <a data-toggle="dropdown" class="dropdown-toggle disabled" disable">Thông tin cá nhân</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{url('the-thanh-vien')}}">Thẻ thành viên</a></li>
+                                            <li><a href="{{url('muon-sach')}}">Thông tin mượn</a></li>
+                                        </ul>
+                                    </li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
@@ -318,24 +305,8 @@
                             </address>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-6 widget-container">
-                        <div id="nav_menu-2" class="widget widget_nav_menu">
-                            <h3 class="footer-widget-title">Quick Links</h3>
-                            <span class="underline left"></span>
-                            <div class="menu-quick-links-container">
-                                <ul id="menu-quick-links" class="menu">
-                                    <li><a href="#">Library News</a></li>
-                                    <li><a href="#">History</a></li>
-                                    <li><a href="#">Meet Our Staff</a></li>
-                                    <li><a href="#">Board of Trustees</a></li>
-                                    <li><a href="#">Budget</a></li>
-                                    <li><a href="#">Annual Report</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="clearfix hidden-lg hidden-md hidden-xs tablet-margin-bottom"></div>
-                    <div class="col-md-2 col-sm-6 widget-container">
+                    <div class="col-md-3 col-sm-6 widget-container">
                         <div id="text-4" class="widget widget_text">
                             <h3 class="footer-widget-title">Timing</h3>
                             <span class="underline left"></span>
@@ -351,7 +322,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 widget-container">
+                    <div class="col-md-5 col-sm-6 widget-container">
                         <div class="widget twitter-widget">
                             <h3 class="footer-widget-title">Latest Tweets</h3>
                             <span class="underline left"></span>
@@ -379,14 +350,7 @@
                     </div>
                     <div class="col-md-9 pull-right">
                         <ul>
-                            <li><a href="{{url('/')}}">Home</a></li>
-                            <li><a href="books-media-list-view.html">Books &amp; Media</a></li>
-                            <li><a href="news-events-list-view.html">News &amp; Events</a></li>
-                            <li><a href="#">Kids &amp; Teens</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="#">Research</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{{url('/')}}">Trang chủ</a></a></li>
                         </ul>
                     </div>
                 </div>

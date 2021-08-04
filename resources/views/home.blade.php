@@ -8,10 +8,10 @@
             <div class="navigation">
                 <ul>
                     <li>
-                        <a href="#">
-                            <span class="icon"><i class="fa fa-user" aria-hidden="true"></i>
+                        <a href="{{url('/home')}}">
+                            <span class="icon"><img src="{{asset('images/favicon.ico')}}"</i>
                             </span>
-                            <span class="title">Admin</span>
+                            <span class="title">Libraria</span>
                         </a>
                     </li>
                     <li>

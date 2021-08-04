@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DanhmucSach;
+use App\Models\Muontra;
 use Illuminate\Http\Request;
 use App\Models\Sach;
 use App\Models\User;
@@ -31,10 +32,17 @@ class UserpageController extends Controller
 
     public function chitiet($slugsach)
     {
-        $user = auth() -> user ();
+        $user = Auth::user()-> id;
+        $id_Sach = Sach::where('slugsach',$slugsach)->get('id_Sach')->toArray()[0]['id_Sach'];
+        $muonsach = Muontra::where('id',$user)->where('tinhtrang','Đang mượn')->orwhere('tinhtrang','Đang chờ')->get('id_Sach')->toArray();
+        $array=[];
+        foreach ($muonsach as $key => $value) {
+            array_push($array,$value['id_Sach']);
+        }
         $sach = Sach::orderBy('id_Sach','DESC')->where('slugsach',$slugsach)->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-        return view('homepage.chitiet')->with(compact('danhmuc','sach','user'));
+    
+        return view('homepage.chitiet')->with(compact('danhmuc','sach','user','array','id_Sach'));
     }
 
     public function timkiem()

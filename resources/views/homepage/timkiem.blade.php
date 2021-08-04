@@ -27,10 +27,11 @@
                         @foreach($sach as $key => $value)
                         <div class="col-md-3">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="{{asset('uploads/sach/'.$value->hinhanh)}}">
+                                <img class="card-img-top" src="{{asset('uploads/sach/'.$value->hinhanh)}}" width="200px" height="300px">
                                 <div class="card-body">
-                                    <h5>{{$value->tensach}}</h5>
-                                    <p class="card-text">{{$value->tomtat}}</p>
+                                    <br>
+                                    <h5>{{$value->tensach}}</h5> <br>
+                                    <p class="card-text">{{$value->tentacgia}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a>
