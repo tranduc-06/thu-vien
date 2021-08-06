@@ -17,7 +17,7 @@
                     <div class="text-center">
                         <h2 class="section-title"></h2>
                         <span class="underline center"></span>
-                        <p class="lead">Những cuốn sách được mượn nhiều nhất trong tuần qua.</p>
+                        <p class="lead">{{$danhmuc_id->tendanhmuc}}</p>
                     </div>
                     <div class="row">
                         @foreach($sach as $key => $value)

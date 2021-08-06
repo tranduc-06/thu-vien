@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Sach;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 
 class UserpageController extends Controller
@@ -15,16 +17,55 @@ class UserpageController extends Controller
     public function index()
     { 
         $sach = Sach::orderBy('id_Sach','DESC')->get();
+        // $muonnhieu = DB::table('muontra')->join('sach','id_Sach','=','id_Sach')
+        //              ->select('sach.tensach')
+        //              ->where('tinhtrang','Đang mượn')
+        //              ->where('Muontra::DATEDIFF(CURRENT_DATE,`ngay_Muon`)','<','7')
+        //              ->groupBy('Muontra::id_Sach')
+        //              ->orderBy('count()')
+        //              ->get();
+
+        // $muonnhieu = DB::select(DB::raw("SELECT sach.id_Sach 
+        // from muontra  AS muontra
+        // join sach AS sach on muontra.id_Sach = sach.id_Sach 
+        // WHERE tinhtrang = 'Đang mượn' and ngay_Muon BETWEEN (SELECT CURRENT_DATE()-7) AND (SELECT CURRENT_DATE()) 
+        // GROUP BY sach.id_Sach 
+        // ORDER BY COUNT(*) DESC 
+        // LIMIT 1
+        // "));
+         $muonnhieu1 = DB::select(DB::raw("SELECT muontra.id_Sach 
+         from muontra  
+         WHERE tinhtrang = 'Đang mượn' and ngay_Muon BETWEEN (SELECT CURRENT_DATE()-7) AND (SELECT CURRENT_DATE()) 
+         GROUP BY muontra.id_Sach 
+         ORDER BY COUNT(*) DESC 
+         LIMIT 5 
+         "));
+        $array1=[];
+        foreach ($muonnhieu1 as $key => $value) {
+        array_push($array1,$value->id_Sach); 
+        //  
+        } 
+
+ 
+        $muonnhieu = Sach::all()
+                     ->whereIn('id_Sach', $array1);
+        // $muonnhieu1 = muontra::select('id_Sach')->where('tinhtrang','Đang mượn')
+        // ->where(DB::raw('DATEDIFF(muontra.ngay_Muon,CURRENT_DATE)','>','7'))
+        // ->groupBy('id_Sach')
+        // ->orderBy(DB::raw('count(id_Sach)', 'DESC'))
+        // ->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-        return view('homepage.userpage')->with(compact('danhmuc','sach'));
+        return view('homepage.userpage')->with(compact('danhmuc','sach','muonnhieu'));
     }
+
+    
 
     public function danhmuc($slugdanhmuc)
     {
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
         $danhmuc_id = DanhmucSach::where('slugdanhmuc',$slugdanhmuc)->first();       
         $sach = Sach::orderBy('id_Sach','DESC')->where('id_Danhmuc',$danhmuc_id->id_Danhmuc)->get();
-        return view('homepage.danhmuc')->with(compact('danhmuc','sach'));
+        return view('homepage.danhmuc')->with(compact('danhmuc','sach','danhmuc_id'));
         
     }
 

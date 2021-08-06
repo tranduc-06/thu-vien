@@ -15,7 +15,7 @@
                     $count = count($sach);
                     @endphp
                     @if($count==0)
-                    <p>Sách đang cập nhật</p>
+                    <p>Không tìm thấy sách nào cho từ khóa: {{$tukhoa}}</p>
                     @else
 
                     <div class="text-center">

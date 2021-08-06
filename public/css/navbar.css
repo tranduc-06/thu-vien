@@ -1,0 +1,167 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+body
+{
+    background: #f2f2f2;
+}
+
+.header
+{
+    height: 60vh;
+    color: #3d3b3b;
+}
+
+nav
+{
+    height: auto;
+    background: #3d3b3b;
+}
+
+nav:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav div.logo {
+    
+    float: left;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+    
+}
+
+
+nav ul
+{
+    float: right;
+    margin-right: 40px;
+    position: relative;
+    padding-left: 0;
+}
+
+nav ul li
+{
+    float: left;
+    background: #3d3b3b;
+    margin: 0 5px;
+
+}
+
+nav ul li a
+{
+    color: white;
+    line-height: 70px;
+    font-size:  18px;
+    padding: 8px 15px;
+}
+
+nav ul li a:hover
+{
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+} 
+
+
+
+
+nav ul ul 
+{
+    position: absolute;
+    top: 90px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+}
+
+nav ul li:hover > ul
+{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li
+{
+    position: relative;
+    margin: 0px;
+    width: auto;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+nav ul ul li a
+{
+    line-height:50px;
+}
+
+nav ul ul li a:hover
+{
+    color: cyan;
+    box-shadow: none;
+}
+
+.img
+{
+    height: 30vh;
+    color:#3d3b3b;
+    background-image: url("../images/header-slide.jpg");
+}
+
+.search-icon
+{
+
+    line-height: 70px; 
+    float : right;
+    padding-right: 10px;
+
+}
+
+.search-icon input[type="search"]
+{
+    height: 30px;
+    padding-right: 10px;
+    padding-left: 5px;
+    margin-right: 10px;
+}
+.search-icon input[type="search"]:focus {
+    outline: none;
+  }
+
+.search-icon .btn
+{
+    background: black;
+    color: white;
+    font-size: 13px;
+    padding: 5px 5px;
+    margin-top: -5px;
+
+}
+.search-icon .btn:hover
+{
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+
+.footer
+{
+    height: 20vh;
+    background: #3d3b3b;
+    color: white;
+}

@@ -30,8 +30,8 @@ Route::get('/',[UserpageController::class, 'index']);
 Route::get('/danh-muc/{slugdanhmuc}',[UserpageController::class, 'danhmuc']);
 Route::get('/chi-tiet/{slugsach}',[UserpageController::class, 'chitiet'])->middleware('auth');
 Route::get('/tim-kiem',[UserpageController::class, 'timkiem']);
-Route::post('/muon-sach-1',[MuonsachController::class, 'store'])->middleware('checkborrowed');
-Route::get('/muon-sach',[MuonsachController::class, 'index'])->middleware('auth');;
+Route::post('/muon-sach-1',[MuonsachController::class, 'store']);
+Route::get('/muon-sach',[MuonsachController::class, 'index'])->middleware('auth');
 Route::get('/the-thanh-vien',[UserpageController::class, 'thethanhvien'])->middleware('auth');
 
 

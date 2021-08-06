@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DanhmucSach;
 use App\Models\Sach;
 use App\Models\User;
+use App\Models\Muontra;
 
 class DashboardController extends Controller
 {
@@ -29,8 +30,9 @@ class DashboardController extends Controller
     public function index()
     {
         $total_books = Sach::all()-> count();
-        $new_users = User::all()->where('User::DATEDIFF(CURRENT_DATE,`created_at`)','<','30')->count();
-        return view('admin.dashboard.index')->with(compact('total_books','new_users'));
+        $new_users = User::all()->where('User::DATEDIFF(CURRENT_DATE,`created_at`)','<','7')->count();
+        $luotmuon = Muontra::all()->where('tinhtrang','Đang mượn')->where('Muontra::DATEDIFF(CURRENT_DATE,`ngay_Muon`)','<','7')->count();
+        return view('admin.dashboard.index')->with(compact('total_books','new_users','luotmuon'));
     }
 
     /**

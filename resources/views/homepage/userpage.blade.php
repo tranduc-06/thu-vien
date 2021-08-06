@@ -60,240 +60,19 @@
 
 
     <!-- Start: Our Community Section -->
-    <section class="community-testimonial">
+    <section>
         <div class="container">
             <div class="text-center">
                 <h2 class="section-title">Sách mượn nhiều</h2>
                 <span class="underline center"></span>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="lead">Những cuốn sách mượn nhiều trong tuần</p>
             </div>
-            <div class="owl-carousel">
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="{{ asset('uploads/sach/tienganh32.jpg')}}" alt="Book Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Adrey Pachai <small>(Student)</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Maria B <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Adrey Pachai <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Maria B <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Adrey Pachai <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Maria B <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-01.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Adrey Pachai <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="single-testimonial-box">
-                    <div class="top-portion">
-                        <img src="images/testimonial-image-02.jpg" alt="Testimonial Image" />
-                        <div class="user-comment">
-                            <div class="arrow-left"></div>
-                            <blockquote cite="#">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna magna, rhoncus eget commodo et, dignissim non nulla. Sed sit amet vestibulum ex. Donec dolor velit
-                            </blockquote>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="bottom-portion">
-                        <a href="#" class="author">
-                            Maria B <small>(Student )</small>
-                        </a>
-                        <div class="social-share-links">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
+    <div class="owl-carousel owl-theme">
+        @foreach($muonnhieu as $key => $value)
+        <div class="item"><img src="{{asset('uploads/sach/'.$value->hinhanh)}}" width="223px" height="315px"><br><strong>{{$value->tensach}}</strong><br>{{$value->tentacgia}}<br><a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a><small class="text-muted" style="margin-left:130px">9 mins</small>
+</div>
+        @endforeach
+    </div>
     </section>
     <section>   
         <div class="text-center">
@@ -303,7 +82,7 @@
                     <div class="text-center">
                         <h2 class="section-title">Sách mới cập nhật</h2>
                         <span class="underline center"></span>
-                        <p class="lead">Những cuốn sách được mượn nhiều nhất trong tuần qua.</p>
+                        <p class="lead">Những cuốn sách mới nhất trong tuần qua.</p>
                     </div>
                     <div class="row">
                         @foreach($sach as $key => $value)
@@ -317,7 +96,6 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a>
-                                            <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
                                         </div>
                                         <small class="text-muted">9 mins</small>
                                     </div>
