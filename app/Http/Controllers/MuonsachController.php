@@ -20,7 +20,7 @@ class MuonsachController extends Controller
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
         $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
         ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
-        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'sach.id_Sach', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
         ->where('users.id',Auth::id())
         ->get();
         return view('homepage.muonsach')->with(compact('muon','danhmuc'));
@@ -28,7 +28,7 @@ class MuonsachController extends Controller
 
     public function store(Request $request)
     {   
-  
+         
             $muonsach = new Muontra();
             $muonsach-> id_Sach = $request['id_Sach'];
             $muonsach -> id = $request['id'];

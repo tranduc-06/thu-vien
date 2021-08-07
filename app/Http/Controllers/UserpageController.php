@@ -82,7 +82,6 @@ class UserpageController extends Controller
         }
         $sach = Sach::orderBy('id_Sach','DESC')->where('slugsach',$slugsach)->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-    
         return view('homepage.chitiet')->with(compact('danhmuc','sach','user','array','id_Sach'));
     }
 

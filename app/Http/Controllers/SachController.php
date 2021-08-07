@@ -54,10 +54,12 @@ class SachController extends Controller
         $validated = $request->validate([
             'tensach' => 'required|unique:sach|max:255',
             'slugsach' => 'required|unique:sach|max:255',
-            'hinhanh' => 'required|image|mimes:jpg,png,gif,svg|max:4096|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-            'tomtat' => 'required|max:255',
+            'hinhanh' => 'required|image|mimes:jpg,png,gif,svg',
+            'tomtat' => 'required|max:500',
             'nhaxuatban' => 'required',
-            'namxuatban' => 'required|max:2021',
+            'soluong' => 'required',
+            'giabia' => 'required',
+            'namxuatban' => 'required',
             'tentacgia' => 'required',
             'danhmuc' => 'required'
 
@@ -79,6 +81,8 @@ class SachController extends Controller
         $sach -> nhaxuatban = $validated['nhaxuatban'];
         $sach -> namxuatban = $validated['namxuatban'];
         $sach -> tentacgia = $validated['tentacgia'];
+        $sach -> soluong = $validated['soluong'];
+        $sach -> giabia = $validated['giabia'];
         $sach -> id_Danhmuc = $validated['danhmuc'];
 
         $get_image = $request->hinhanh;
@@ -132,10 +136,12 @@ class SachController extends Controller
         $validated = $request->validate([
             'tensach' => 'required|unique:sach|max:255',
             'slugsach' => 'required',
-            'hinhanh' => 'required|image|mimes:jpg,png,gif,svg|max:4096|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
-            'tomtat' => 'required|unique:sach|max:255',
+            'hinhanh' => 'required|image|mimes:jpg,png,gif,svg',
+            'tomtat' => 'required|unique:sach|max:500',
             'nhaxuatban' => 'required',
-            'namxuatban' => 'required|max:2021',
+            'namxuatban' => 'required',
+            'soluong' => 'required',
+            'giabia' => 'required',
             'tentacgia' => 'required',
             'danhmuc' => 'required'
 
@@ -157,6 +163,8 @@ class SachController extends Controller
         $sach -> nhaxuatban = $validated['nhaxuatban'];
         $sach -> namxuatban = $validated['namxuatban'];
         $sach -> tentacgia = $validated['tentacgia'];
+        $sach -> soluong = $validated['soluong'];
+        $sach -> giabia = $validated['giabia'];
         $sach -> id_Danhmuc = $validated['danhmuc'];
 
         $get_image = $request->hinhanh;

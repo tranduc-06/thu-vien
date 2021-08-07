@@ -70,9 +70,18 @@
         <input type="file" class="form-control-file" name="hinhanh">
     </div>
 
+    <div class="form-group">
+        <label for="soluong">Số lượng</label>
+        <input type="number" class="form-control" name="soluong">
+    </div>
+    <div class="form-group">
+        <label for="giabia">Giá bìa</label>
+        <input type="number" class="form-control" name="giabia">
+    </div>
+
     <div>
         <label for="tomtat">Tóm tắt</label>
-        <textarea class="form-control" name="tomtat" rows="5" style="resize: none;"></textarea>
+        <textarea class="form-control"  name="tomtat" rows="5" style="resize: none;"></textarea>
     </div><br>
     <!-- <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

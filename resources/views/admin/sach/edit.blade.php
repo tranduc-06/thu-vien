@@ -70,7 +70,14 @@
         <input type="file" class="form-control-file" name="hinhanh">
         <img src="{{asset('uploads/sach/'.$sach->hinhanh)}}" height="180px" width="100px">
     </div>
-
+    <div class="form-group">
+        <label for="soluong">Số lượng</label>
+        <input type="text" class="form-control" value="{{$sach->soluong}}" name="soluong" id="soluong" placeholder="Số lượng">
+    </div>
+    <div class="form-group">
+        <label for="giabia">Giá bìa</label>
+        <input type="text" class="form-control" value="{{$sach->giabia}}" name="giabia" id="giabia" placeholder="Giá bìa">
+    </div>
     <div>
         <label for="tomtat">Tóm tắt</label>
         <textarea class="form-control" value="{{$sach->tomtat}}" name="tomtat" rows="5" style="resize: none;"></textarea>

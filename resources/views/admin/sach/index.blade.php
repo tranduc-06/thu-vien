@@ -26,6 +26,8 @@
             <th scope="col"> Nhà xuất bản </th>
             <th scope="col"> Năm xuất bản</th>
             <th scope="col"> Hình ảnh </th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Giá bìa</th>
             <th scope="col"> Quản lý </th>
 
         </tr>
@@ -40,8 +42,9 @@
             <td>{{$sach->danhmucsach->tendanhmuc}}</td>
             <td>{{$sach->nhaxuatban}}</td>
             <td>{{$sach->namxuatban}}</td>
-            <td><img src="{{asset('uploads/sach/'.$sach->hinhanh)}}" height="180px" width="100px" </td>
-
+            <td><img src="{{asset('uploads/sach/'.$sach->hinhanh)}}" height="180px" width="150px" </td>
+            <td>{{$sach->soluong}}</td>
+            <td>{{$sach->giabia}}</td>
             <td>
                 <div style="display:flex;">
                 <a href="{{route('sach.edit',[$sach->id_Sach])}}" class="btn btn-primary btn-sm">edit</a>
@@ -53,6 +56,7 @@
                 </form>
             </div>
             </td>
+            
         </tr>
         @endforeach
     </tbody>

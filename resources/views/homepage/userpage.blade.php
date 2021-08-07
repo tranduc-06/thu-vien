@@ -69,7 +69,7 @@
             </div>
     <div class="owl-carousel owl-theme">
         @foreach($muonnhieu as $key => $value)
-        <div class="item"><img src="{{asset('uploads/sach/'.$value->hinhanh)}}" width="223px" height="315px"><br><strong>{{$value->tensach}}</strong><br>{{$value->tentacgia}}<br><a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a><small class="text-muted" style="margin-left:130px">9 mins</small>
+        <div class="item"><img src="{{asset('uploads/sach/'.$value->hinhanh)}}" width="223px" height="315px"><br><strong>{{$value->tensach}}</strong><br>{{$value->tentacgia}}<br><a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">Chi tiết</a><small class="text-muted" style="margin-left:130px">9 mins</small>
 </div>
         @endforeach
     </div>
@@ -95,7 +95,7 @@
                                     <p class="card-text">{{$value->tentacgia}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a>
+                                            <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">Chi tiết</a>
                                         </div>
                                         <small class="text-muted">9 mins</small>
                                     </div>

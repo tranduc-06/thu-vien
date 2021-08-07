@@ -29,8 +29,7 @@
                                     <p class="card-text">{{$value->tomtat}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">View</a>
-                                            <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                            <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">Chi tiết</a>
                                         </div>
                                         <small class="text-muted">9 mins</small>
                                     </div>

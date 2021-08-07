@@ -31,10 +31,6 @@
                 </li>
 
                 <li>
-                    <a href="#">Bảng DDC</a>
-                </li>
-
-                <li>
                     <a href="#" disabled>Thông tin cá nhân</a>
                     <ul>
                         <li>
@@ -69,7 +65,7 @@
             </ul>
         </nav>
     <div class="img">
-        <div class="search-icon" style="background-image: url('images/header-side.jpg')">
+        <div class="search-icon">
             <form action="{{url('tim-kiem')}}" method="get">
                 @csrf
                 <input type="search" name="tukhoa" placeholder="Tên sách,tên tác giả...">
@@ -79,13 +75,31 @@
         </div>
     </div>
 
-    <section style="margin-top: -10vh">
+    <section style="margin-top: -10vh;height:auto">
         @yield('content2')
     </section>
 
 
     <footer class="footer">
-        <p>Copyright &copy;Đức</p>
+        <div class="container">
+            <div class="row">
+                
+                <div class="logo">Thư viện Mini</div></div>
+               
+                <div class="col-md-3">
+                    <h5>Liên hệ</h5>
+                    <ul>
+                        <li>
+                            0964875742 
+                        </li>
+                        <li>
+                            admin@gmail.com
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="navbar.js"></script>
@@ -101,7 +115,7 @@
                     items: 1
                 },
                 600: {
-                    items: 3
+                    items: 1
                 },
                 1000: {
                     items: 4    

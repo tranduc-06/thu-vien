@@ -37,6 +37,7 @@
               <div style="display:flex;">
                 <form action="{{url('/quanlymuonsach/dongy')}}" method="post">
                     @csrf
+                    <input type="hidden" name="id_Sach" value="{{$value->id_Sach}}"/>
                     <input type="hidden" name="id_Muontra" value="{{$value->id_Muontra}}"/>
                     <button onclick="return confirm('Bạn đồng ý cho mượn quyển sách này?')" class="btn btn-primary btn-sm">Đồng ý</button>
                 </form>

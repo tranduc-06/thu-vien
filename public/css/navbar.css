@@ -161,7 +161,21 @@ nav ul ul li a:hover
 
 .footer
 {
-    height: 20vh;
+    height: 30vh;
     background: #3d3b3b;
     color: white;
+}
+.footer .logo
+{
+    float: left;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+}
+
+.footer .col-md-3
+{
+    float: right;
 }

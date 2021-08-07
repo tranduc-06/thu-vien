@@ -2,30 +2,33 @@
 
 @section('content2')
 <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">id_Thẻ</th>
-            <th scope="col">Tên độc giả</th>
-            <th scope="col">Điện thoại</th>
-            <th scope="col">Email</th>
-            <th scope="col">Ngày bắt đầu</th>
-            <th scope="col">Địa chỉ</th>
-           
-        </tr>
-    </thead>
-    <tbody>
+
         @foreach ($thanhvien as $key => $value)
         <tr>
+            <th scope="row">id_Thẻ</th>
             <th scope="row">{{$value->id}}</th>
+        </tr>
+        <tr>
+             <th scope="row">Tên độc giả</th>
             <td>{{$value->name}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Điện thoại</th>
             <td>{{$value->phone}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
             <td>{{$value->email}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Ngày bắt đầu</th>
             <td>{{$value->created_at}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Địa chỉ</th>
             <td>{{$value->address}}</td>
-
         </tr>
        @endforeach
-    </tbody>
 </table>
 
 @endsection

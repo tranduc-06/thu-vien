@@ -64,6 +64,7 @@
     <td>
     <form action="{{url('/quanlymuonsach/datra')}}" method="post">
                     @csrf
+                    <input type="hidden" name="id_Sach" value="{{$value->id_Sach}}"/>
                     <input type="hidden" name="ngay_Muon" value="{{$value->ngay_Muon}}"/>
                     <input type="hidden" name="id_Muontra" value="{{$value->id_Muontra}}"/>
                     <button style="margin-left: 5px;;" onclick="tra()" class="btn btn-success btn-sm">Trả</button>
