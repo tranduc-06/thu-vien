@@ -83,15 +83,15 @@ class QuanlyMuonsachController extends Controller
         $id_Muontra = $request ->id_Muontra;
         $muonsach = Muontra::find($id_Muontra);
         $muonsach-> ngay_Tra = date('Y-m-d');
+
         
         
-        
-        if(date_diff(date('Y-m-d'),'ngay_Tra') < 0)
+        // if(date_diff(date('Y-m-d'),'ngay_Tra') < 0)
 
         $muonsach-> tinhtrang = 'Đã trả';
         
-        else
-        $muonsach-> tinhtrang = 'Qúa hạn';
+        // else
+        // $muonsach-> tinhtrang = 'Qúa hạn';
 
         $muonsach->save();
         $update = Sach::find($id_Sach);
