@@ -22,6 +22,7 @@ class QuanlyMuonsachController extends Controller
         ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id','muontra.id_Sach','muontra.id_Muontra', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
         ->where('muontra.tinhtrang','Đang mượn')
         ->orwhere('muontra.tinhtrang','Đã trả')
+        ->orwhere('muontra.tinhtrang','Quá hạn')
         ->get();
         return view('admin.quanlymuonsach.index')->with(compact('muon','danhmuc'));
     }
@@ -83,16 +84,12 @@ class QuanlyMuonsachController extends Controller
         $id_Muontra = $request ->id_Muontra;
         $muonsach = Muontra::find($id_Muontra);
         $muonsach-> ngay_Tra = date('Y-m-d');
+        $ngay_Tra = date('Y-m-d');
+        $ngay_Hentra = $muonsach->ngay_Hentra;
 
-        
-        
-        // if(date_diff(date('Y-m-d'),'ngay_Tra') < 0)
-
+        if($ngay_Tra<$ngay_Hentra)
+        {
         $muonsach-> tinhtrang = 'Đã trả';
-        
-        // else
-        // $muonsach-> tinhtrang = 'Qúa hạn';
-
         $muonsach->save();
         $update = Sach::find($id_Sach);
         $update1 = $update->soluong+1;
@@ -104,6 +101,23 @@ class QuanlyMuonsachController extends Controller
         ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
         ->get();  
         return redirect()->back()->with('status','Đồng ý trả sách thành công');
+        
+        }
+        else
+        {
+        $muonsach-> tinhtrang = 'Quá hạn';     
+        $muonsach->save();
+        $update = Sach::find($id_Sach);
+        $update1 = $update->soluong+1;
+        $update->soluong = $update1;
+        $update->save();
+        $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $muon = DB::table('muontra')->join('users', 'muontra.id', '=', 'users.id')
+        ->join('sach', 'muontra.id_Sach', '=', 'sach.id_Sach')
+        ->select('users.name','users.email','users.phone','users.address','sach.tensach','muontra.id', 'muontra.ngay_Muon','muontra.ngay_Hentra','muontra.ngay_Tra','muontra.tinhtrang')
+        ->get();  
+        return redirect()->back()->with('status','Sách trả quá hạn');
+        }
     }
     
 }

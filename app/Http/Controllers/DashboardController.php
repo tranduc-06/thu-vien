@@ -31,6 +31,9 @@ class DashboardController extends Controller
     {
         $total_books = Sach::all()-> count();
         $new_users = User::all()->where('User::DATEDIFF(CURRENT_DATE,`created_at`)','<','7')->count();
+        // $tongtien = Sach::all()->sum('soluong'*'giabia');
+        // dd('tongtien');
+        // exit();
         $luotmuon = Muontra::all()->where('tinhtrang','Đang mượn')->where('Muontra::DATEDIFF(CURRENT_DATE,`ngay_Muon`)','<','7')->count();
         return view('admin.dashboard.index')->with(compact('total_books','new_users','luotmuon'));
     }
