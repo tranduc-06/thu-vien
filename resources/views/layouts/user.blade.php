@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Navbar</title>
+    <title>Thư viện Mini</title>
     <link type="text/css" rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
@@ -16,7 +16,7 @@
 <body>
     <div class="header">
         <nav>
-            <div class="logo">Thư viện Mini</div>
+            <div class="logo"> <a href="{{url('/')}}">Thư viện Mini</a></div>
             <ul>
                 <li>
                     <a href="{{url('/')}}">Trang chủ</a>

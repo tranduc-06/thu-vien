@@ -31,8 +31,8 @@ nav:after{
     display: table;
 }
 
-nav div.logo {
-    
+nav div.logo a{
+    text-decoration: none;
     float: left;
     color: white;
     font-size: 27px;

@@ -7,6 +7,8 @@ use App\Models\DanhmucSach;
 use App\Models\Sach;
 use App\Models\User;
 use App\Models\Muontra;
+use Illuminate\Support\Facades\DB;
+
 
 class DashboardController extends Controller
 {
@@ -31,12 +33,18 @@ class DashboardController extends Controller
     {
         $total_books = Sach::all()-> count();
         $new_users = User::all()->where('User::DATEDIFF(CURRENT_DATE,`created_at`)','<','7')->count();
-        // $tongtien = Sach::all()->sum('soluong'*'giabia');
-        // dd('tongtien');
+        $tongtien = DB::select(DB::raw("SELECT SUM(soluong*giabia) as tongtien from sach"));
+        $array1=[];
+        foreach ($tongtien as $key => $value) {
+        array_push($array1,$value->tongtien); 
+        //  
+        }
+        // dd($array1);
         // exit();
         $luotmuon = Muontra::all()->where('tinhtrang','Đang mượn')->where('Muontra::DATEDIFF(CURRENT_DATE,`ngay_Muon`)','<','7')->count();
-        return view('admin.dashboard.index')->with(compact('total_books','new_users','luotmuon'));
+        return view('admin.dashboard.index')->with(compact('total_books','new_users','luotmuon','array1'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -45,7 +53,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dashboard.tiensach');
     }
 
     /**

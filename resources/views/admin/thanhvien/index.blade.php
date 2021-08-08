@@ -12,7 +12,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">id_Thẻ</th>
             <th scope="col">Tên độc giả</th>
             <th scope="col">Điện thoại</th>
@@ -25,8 +24,7 @@
     <tbody>
         @foreach ($thanhvien as $key => $value)
         <tr>
-            <th scope="row">{{$key}}</th>
-            <td>{{$value->id}}</td>
+            <th scope="row">{{$value->id}}</th>
             <td>{{$value->name}}</td>
             <td>{{$value->phone}}</td>
             <td>{{$value->email}}</td>

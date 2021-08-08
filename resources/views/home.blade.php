@@ -11,7 +11,7 @@
                         <a href="{{url('/home')}}">
                             <span class="icon"><img src="{{asset('images/favicon.ico')}}"</i>
                             </span>
-                            <span class="title">Libraria</span>
+                            <span class="title">Thư viện Mini</span>
                         </a>
                     </li>
                     <li>
