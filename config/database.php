@@ -1,11 +1,6 @@
 <?php
-$url = parse_url(getenv('DATABASE_URL'));
-$host = $url['host']??null;
-$username = $url['user']??null;
-$password = $url['pass']??null;
-$database = substr($url['path'], 1);
-use Illuminate\Support\Str;
-$DATABASE_URL = parse_url('postgres://oofwthawmznecp:b22bbcf318dbe905acef6fcd66d0afecd4c6bad34d13940e275bae2373aaf938@ec2-34-197-105-186.compute-1.amazonaws.com:5432/derdudnhkbjcks');
+
+$DATABASE_URL = parse_url('postgres://qxnhivclslbilg:eb82423fa7f1f138157bc1722745aa8fae693b05cb6cd94ad4a4da77800a21ac@ec2-3-227-44-84.compute-1.amazonaws.com:5432/dn49v1qgd4b29');
 
 return [
 
