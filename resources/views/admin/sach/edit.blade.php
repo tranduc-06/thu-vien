@@ -46,6 +46,15 @@
     </div>
 
     <div class="form-group">
+        <label for="ddc">Tên lớp DDC</label>
+        <select class="form-control" id="ddc" name="ddc">
+            @foreach($ddc as $key => $muc)
+            <option {{$muc->malopDDC == $sach->malopDDC ? 'selected' : ''}} value="{{$muc->malopDDC}}">{{$muc->tenlopDDC}}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group">
         <label for="danhmuc">Tên danh mục</label>
         <select class="form-control" id="danhmuc" name="danhmuc">
             @foreach($danhmucsach as $key => $muc)

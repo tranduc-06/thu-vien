@@ -44,6 +44,16 @@
         <label for="slugsach">Slug sách</label>
         <input type="text" class="form-control" value="{{ old('slugsach')}}" name="slugsach" id="convert_slug" placeholder="Slug sách">
     </div>
+
+    <div class="form-group">
+        <label for="ddc">Tên lớp DDC</label>
+        <select class="form-control" id="ddc" name="ddc">
+            @foreach($ddc as $key => $muc)
+            <option value="{{$muc->malopDDC}}">{{$muc->tenlopDDC}}</option>
+            @endforeach
+        </select>
+    </div>
+
     <div class="form-group">
         <label for="danhmuc">Tên danh mục</label>
         <select class="form-control" id="danhmuc" name="danhmuc">

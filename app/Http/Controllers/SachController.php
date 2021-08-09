@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DanhmucSach;
 use App\Models\Sach;
+use App\Models\Ddc;
 use Illuminate\Http\Request;
 
 class SachController extends Controller
@@ -28,6 +29,7 @@ class SachController extends Controller
     public function index()
     {
         $list_sach = Sach::with('danhmucsach')->get();
+        $list_sach = Sach::with('ddc')->get();
         $list_sach = Sach::all();
         return view('admin.sach.index')->with(compact('list_sach'));
     }
@@ -40,7 +42,8 @@ class SachController extends Controller
     public function create()
     {
         $danhmucsach = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-        return view('admin.sach.create')->with(compact('danhmucsach'));
+        $ddc = Ddc::orderBy('malopDDC','DESC')->get();
+        return view('admin.sach.create')->with(compact('danhmucsach','ddc'));
     }
 
     /**
@@ -61,7 +64,8 @@ class SachController extends Controller
             'giabia' => 'required',
             'namxuatban' => 'required',
             'tentacgia' => 'required',
-            'danhmuc' => 'required'
+            'danhmuc' => 'required',
+            'ddc' => 'required'
 
         ],  
         [
@@ -84,6 +88,7 @@ class SachController extends Controller
         $sach -> soluong = $validated['soluong'];
         $sach -> giabia = $validated['giabia'];
         $sach -> id_Danhmuc = $validated['danhmuc'];
+        $sach -> malopDDC = $validated['ddc'];
 
         $get_image = $request->hinhanh;
         $path = 'uploads/sach';
@@ -120,8 +125,9 @@ class SachController extends Controller
 
     {   $sach = Sach::with('danhmucsach')->where('id_Sach',$id_Sach)  ->get();
         $danhmucsach = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
+        $ddc = Ddc::orderBy('malopDDC','DESC')->get();
         $sach = Sach::find($id_Sach);
-        return view('admin.sach.edit') -> with(compact('sach','danhmucsach'));
+        return view('admin.sach.edit') -> with(compact('sach','danhmucsach','ddc'));
     }
 
     /**
@@ -143,7 +149,8 @@ class SachController extends Controller
             'soluong' => 'required',
             'giabia' => 'required',
             'tentacgia' => 'required',
-            'danhmuc' => 'required'
+            'danhmuc' => 'required',
+            'ddc' => 'required'
 
         ],  
         [
@@ -166,6 +173,7 @@ class SachController extends Controller
         $sach -> soluong = $validated['soluong'];
         $sach -> giabia = $validated['giabia'];
         $sach -> id_Danhmuc = $validated['danhmuc'];
+        $sach -> malopDDC = $validated['ddc'];
 
         $get_image = $request->hinhanh;
         $path = 'uploads/sach';

@@ -94,6 +94,16 @@ ul.category-show.show
     display: block;
 }
 
+ul.DDC-show {
+    display: none;
+}
+
+ul.DDC-show.show 
+{
+    display: block;
+}
+
+
 ul.book-show {
     display: none;
 }

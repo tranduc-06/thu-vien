@@ -7,6 +7,7 @@ use App\Models\Muontra;
 use Illuminate\Http\Request;
 use App\Models\Sach;
 use App\Models\User;
+use App\Models\Ddc;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -55,10 +56,22 @@ class UserpageController extends Controller
         // ->orderBy(DB::raw('count(id_Sach)', 'DESC'))
         // ->get();
         $danhmuc = DanhmucSach::orderBy('id_Danhmuc','DESC')->get();
-        return view('homepage.userpage')->with(compact('danhmuc','sach','muonnhieu'));
+        $ddc = Ddc::orderBy('malopDDC','ASC')->get();
+        return view('homepage.userpage')->with(compact('danhmuc','sach','muonnhieu','ddc'));
     }
 
-    
+
+    public function ddc($slugDDC)
+    {
+        $ddc = Ddc::orderBy('malopDDC','DESC')->get();
+        dd($ddc)
+        ;
+        exit();
+        $ddc_malop = Ddc::where('slugDDC',$slugDDC)->first();       
+        $sach = Sach::orderBy('id_Sach','DESC')->where('malopDDC',$ddc_malop->malopDDC)->get();
+        return view('homepage.ddc')->with(compact('ddc','sach','ddc_malop'));
+        
+    }
 
     public function danhmuc($slugdanhmuc)
     {
@@ -68,6 +81,8 @@ class UserpageController extends Controller
         return view('homepage.danhmuc')->with(compact('danhmuc','sach','danhmuc_id'));
         
     }
+
+    
 
 
 

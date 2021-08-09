@@ -22,6 +22,20 @@
                         </a>
                     </li>
                     <li>
+                        <a href="#" onclick="showDDC()">
+                            <span class="icon"><i class="fa fa-list-alt" aria-hidden="true"></i>
+                            </span>
+                            <span class="title">DDC</span>
+                            <span class="icon"><i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                        <ul class="DDC-show">
+                            <li><a href="{{route('ddc.create')}}"><span class="title">Add DDC</span></a></li>
+                            <li><a href="{{route('ddc.index')}}"><span class="title">Show DDC</span></a></li>
+                        </ul>
+
+                    </li>
+                    <li>
                         <a href="#" onclick="showcategory()">
                             <span class="icon"><i class="fa fa-list" aria-hidden="true"></i>
                             </span>
@@ -93,6 +107,12 @@
                     let toggle = document.querySelector('.toggle');
                     navigation.classList.toggle('ative');
                     toggle.classList.toggle('ative');
+                }
+                
+                function showDDC() {
+                    let ddc = document.querySelector('.DDC-show');
+                    ddc.classList.toggle('show');
+
                 }
 
                 function showcategory() {

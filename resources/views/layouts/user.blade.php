@@ -21,6 +21,16 @@
                 <li>
                     <a href="{{url('/')}}">Trang chủ</a>
                 </li>
+
+                <li>
+                    <a href="#">Phân lớp DDC</a>
+                    <ul>
+                        @foreach($ddc as $key => $value)
+                        <li><a href="{{url('/ddc/'.$value->slugDDC)}}">{{$value->tenlopDDC}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+
                 <li>
                     <a href="#">Danh mục sách</a>
                     <ul>

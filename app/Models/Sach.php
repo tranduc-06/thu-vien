@@ -18,6 +18,11 @@ class Sach extends Model
         return $this->belongsTo('App\Models\DanhmucSach', 'id_Danhmuc','id_Danhmuc');
     }
 
+    public function ddc()
+    {
+        return $this->belongsTo('App\Models\Ddc', 'malopDDC','malopDDC');
+    }
+
     public function muontra()
     {
         return $this->hasMany('App\Models\Muontra');

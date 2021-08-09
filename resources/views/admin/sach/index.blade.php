@@ -22,6 +22,7 @@
             <th scope="col" class="sortcol">Tên sách</th>
             <th scope="col">Slug sách</th>
             <th scope="col">Tên tác giả</th>
+			<th scope="col"> Lớp DDC </th>
             <th scope="col"> Danh mục </th>
             <th scope="col"> Nhà xuất bản </th>
             <th scope="col"> Năm xuất bản</th>
@@ -39,6 +40,7 @@
             <td>{{$sach->tensach}}</td>
             <td>{{$sach->slugsach}}</td>
             <td>{{$sach->tentacgia}}</td>
+			<td>{{$sach->ddc->tenlopDDC}}</td>
             <td>{{$sach->danhmucsach->tendanhmuc}}</td>
             <td>{{$sach->nhaxuatban}}</td>
             <td>{{$sach->namxuatban}}</td>

@@ -10,6 +10,7 @@ use App\Http\Controllers\QuanlyMuonsachController;
 use App\Http\Controllers\ThanhvienController;
 use App\Http\Controllers\MuonsachController;
 use App\Models\DanhmucSach;
+use App\Http\Controllers\DdcController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,7 @@ use App\Models\DanhmucSach;
 // });
 
 Route::get('/',[UserpageController::class, 'index']);
+Route::get('ddc/{slugDDC}',[UserpageController::class, 'ddc']);
 Route::get('/danh-muc/{slugdanhmuc}',[UserpageController::class, 'danhmuc']);
 Route::get('/chi-tiet/{slugsach}',[UserpageController::class, 'chitiet'])->middleware('auth');
 Route::get('/tim-kiem',[UserpageController::class, 'timkiem']);
@@ -44,6 +46,7 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('checklogin');
 Route::resource('/danhmucsach',DanhmucController::class);
+Route::resource('/ddc',DdcController::class);
 Route::resource('/sach',SachController::class);
 Route::resource('/dashboard',DashboardController::class);
 Route::get('/quanlymuonsach',[QuanlyMuonsachController::class, 'index'])->middleware('auth');
