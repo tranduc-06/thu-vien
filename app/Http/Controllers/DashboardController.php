@@ -53,7 +53,27 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        return view('admin.dashboard.tiensach');
+        $tien_danhmuc =  DB::table('sach')
+        ->join('danhmuc','sach.id_Danhmuc','=','danhmuc.id_Danhmuc')
+        ->select('danhmuc.tendanhmuc','sach.id_Danhmuc', DB::raw('sum(sach.giabia*sach.soluong) as sum'))
+        ->orderBy('sach.id_Danhmuc')
+        ->groupBy('danhmuc.id_Danhmuc')
+        ->get();
+
+        $tien_nhaxuatban =  DB::table('sach')
+        ->select('sach.nhaxuatban', DB::raw('sum(sach.giabia*sach.soluong) as sum'))
+        ->groupBy('sach.nhaxuatban')
+        ->get();
+        
+        $tien_tentacgia =  DB::table('sach')
+        ->select('sach.tentacgia', DB::raw('sum(sach.giabia*sach.soluong) as sum'))
+        ->groupBy('sach.tentacgia')
+        ->get();
+       
+        // $tien_danhmuc1 = DanhmucSach::with('danhmucsach')
+        //                  ->get();                     
+
+        return view('admin.dashboard.tiensach')->with(compact('tien_danhmuc','tien_nhaxuatban','tien_tentacgia'));
     }
 
     /**

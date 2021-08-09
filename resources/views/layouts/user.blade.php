@@ -79,28 +79,94 @@
         @yield('content2')
     </section>
 
+    <footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+     
+    </div>
+    <!-- Left -->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                
-                <div class="logo">Thư viện Mini</div></div>
-               
-                <div class="col-md-3">
-                    <h5>Liên hệ</h5>
-                    <ul>
-                        <li>
-                            0964875742 
-                        </li>
-                        <li>
-                            admin@gmail.com
-                        </li>
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fa fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
 
-                    </ul>
-                </div>
-            </div>
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fa fa-gem me-3"></i>Thư viện Mini
+          </h6>
+          <p>
+          Cùng sách khám phá những chân trời
+          </p>
         </div>
-    </footer>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Liên hệ
+          </h6>
+          <p><i class="fa fa-home me-3"></i> Đại học quốc gia Hà Nội</p>
+          <p>
+            <i class="fa fa-envelope me-3"></i>
+            admin@gmail.com
+          </p>
+          <p><i class="fa fa-phone me-3"></i>0964875742</p>
+        
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+  </div>
+  <!-- Copyright -->
+</footer>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="navbar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
