@@ -26,7 +26,7 @@
                                 <img class="card-img-top" src="{{asset('uploads/sach/'.$value->hinhanh)}}">
                                 <div class="card-body">
                                     <h5>{{$value->tensach}}</h5>
-                                    <p class="card-text">{{$value->tomtat}}</p>
+                                    <p class="card-text">{{$value->tentacgia}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="{{url('chi-tiet/'.$value->slugsach)}}" class="btn btn-sm btn-outline-secondary">Chi tiết</a>
